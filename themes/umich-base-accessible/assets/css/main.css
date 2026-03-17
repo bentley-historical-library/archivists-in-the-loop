@@ -46,6 +46,10 @@
   --color-footer-bg:         var(--color-law-quad-stone);
   --color-footer-text:       #FFFFFF;
 
+  /* Hero feature */
+  --color-hero-bg:           var(--color-arboretum-blue);
+  --color-hero-title:        var(--color-um-maize);
+
   /* ------------------------------------------------------------
      2. TYPOGRAPHY TOKENS
      ------------------------------------------------------------ */
@@ -472,7 +476,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
    9. HERO BANNER
    ------------------------------------------------------------ */
 .hero-banner {
-  background-color: var(--color-arboretum-blue);
+  background-color: var(--color-hero-bg);
   color: #fff;
   padding: var(--spacing-xl) var(--site-padding);
 }
@@ -483,7 +487,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 
 .hero-banner__heading {
   font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
-  color: var(--color-um-maize);
+  color: var(--color-hero-title);
   margin-bottom: var(--spacing-sm);
 }
 
