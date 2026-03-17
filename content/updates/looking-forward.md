@@ -6,9 +6,9 @@ layout: post
 author: Jesse Johnston
 ---
 
-We are excited to be bringing together an outstanding group of archivists,
-researchers, and practitioners for the Archivists in
-the Loop symposium.<!--more--> Planning is well underway, and we look forward to sharing
+We are excited to be bringing together a dynamic group of archivists,
+researchers, and technology leaders for the Archivists in
+the Loop symposium.<!--more--> Planning is well underway, and we look forward to publicly sharing
 more details about the program and activities in the weeks ahead.
 Invited participants should expect to hear from the organizers, or UMSI's events management team who will be helping us to arrange all of the logistics.
 
