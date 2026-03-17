@@ -24,7 +24,9 @@ may require further attention in future.
 ```text
 archivists-in-the-loop/
 ├── hugo.toml                       Site configuration (title, menu, params)
+├── archetypes/                     Theme templates for updates or other content types (Markdown files)
 ├── content/                        Your pages and posts (Markdown files)
+├── data/                           Files for data to power dynamic pages (JSON files)
 ├── static/                         Static assets (images, favicon, etc.)
 └── themes/umich-base-accessible/
     ├── theme.toml                  Theme metadata
