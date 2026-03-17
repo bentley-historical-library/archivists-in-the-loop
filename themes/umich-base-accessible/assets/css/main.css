@@ -472,7 +472,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
    9. HERO BANNER
    ------------------------------------------------------------ */
 .hero-banner {
-  background-color: var(--color-a2-amethyst);
+  background-color: var(--color-arboretum-blue);
   color: #fff;
   padding: var(--spacing-xl) var(--site-padding);
 }
