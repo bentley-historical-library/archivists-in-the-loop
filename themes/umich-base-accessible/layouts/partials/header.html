@@ -3,11 +3,11 @@
 
     <div class="site-branding">
       {{ if .Site.Params.logo }}
-        <a href="{{ "/" | relURL }}" class="site-logo" aria-label="{{ .Site.Title }} home">
+        <a href="{{ .Site.BaseURL }}" class="site-logo" aria-label="{{ .Site.Title }} home">
           <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
         </a>
       {{ else }}
-        <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+        <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
       {{ end }}
     </div>
 
