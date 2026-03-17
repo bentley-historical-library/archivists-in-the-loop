@@ -138,7 +138,7 @@ Set `draft: false` when the page is ready to publish. While developing, `hugo se
 
 ### Full-width pages
 
-By default, page content is constrained to a readable center column (700px). Setting `fullWidth: true` removes that constraint so the content spans the full viewport width — useful for pages with wide tables, participant grids, or custom layouts.
+By default, page content is constrained to a narrower, readable column (700px) that is aligned the left. Setting `fullWidth: true` removes that constraint so the content spans the full viewport width — useful for pages with wide tables, participant grids, or custom layouts.
 
 ```markdown
 ---
