@@ -3,7 +3,7 @@
 # Replace baseURL with your GitHub Pages URL before deploying
 # ============================================================
 
-baseURL = "" # "https://<your-github-username>.github.io/<repo-name>/"
+baseURL = "https://bentley-historical-library.github.io/archivists-in-the-loop/"
 languageCode = "en-us"
 title = "Archivists in the Loop"
 theme = "umich-base-accessible"
