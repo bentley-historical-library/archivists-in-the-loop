@@ -1,0 +1,17 @@
+{{/*
+  flex-row shortcode — wraps content in a responsive side-by-side flex container
+  Usage:
+    {{< flex-row >}}
+    **Column one** content here.
+    |||
+    **Column two** content here.
+    {{< /flex-row >}}
+
+  Separate columns with a line containing only |||
+*/}}
+{{ $cols := split .Inner "|||" }}
+<div class="shortcode-flex-row">
+  {{ range $cols }}
+    <div class="flex-row__col">{{ . | markdownify }}</div>
+  {{ end }}
+</div>

@@ -1,0 +1,15 @@
+{{/*
+  figure-block shortcode
+  Usage: {{< figure-block src="/images/photo.jpg" alt="Description" caption="A caption." >}}
+  Parameters:
+    src     — image path (required)
+    alt     — alt text (required for accessibility)
+    caption — optional caption text below the image
+*/}}
+{{ $src     := .Get "src" }}
+{{ $alt     := .Get "alt" | default "" }}
+{{ $caption := .Get "caption" }}
+<figure class="shortcode-figure">
+  <img src="{{ $src }}" alt="{{ $alt }}">
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

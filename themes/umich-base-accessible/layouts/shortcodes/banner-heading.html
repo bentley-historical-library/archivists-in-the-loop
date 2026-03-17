@@ -1,0 +1,15 @@
+{{/*
+  banner-heading shortcode
+  A full-width colored band containing a heading.
+  Usage: {{< banner-heading level="2" color="teal" >}}My Section Title{{< /banner-heading >}}
+  Parameters:
+    level  — heading level: 1, 2 (default), 3, or 4
+    color  — background color: "blue" (default), "teal", "maize", "red", "dark"
+*/}}
+{{ $level := .Get "level" | default "2" }}
+{{ $color := .Get "color" | default "blue" }}
+<div class="shortcode-banner-heading shortcode-banner-heading--{{ $color }}">
+  <div class="shortcode-banner-heading__inner">
+    <h{{ $level }}>{{ .Inner | markdownify }}</h{{ $level }}>
+  </div>
+</div>

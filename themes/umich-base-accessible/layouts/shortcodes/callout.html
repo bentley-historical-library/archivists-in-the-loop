@@ -1,0 +1,13 @@
+{{/*
+  callout shortcode
+  Usage: {{< callout color="teal" title="Note" >}}Body text here.{{< /callout >}}
+  Parameters:
+    color  — "maize" (default), "teal", "blue", "red"
+    title  — optional bold heading inside the callout
+*/}}
+{{ $color := .Get "color" | default "maize" }}
+{{ $title := .Get "title" }}
+<div class="shortcode-callout shortcode-callout--{{ $color }}">
+  {{ with $title }}<p class="shortcode-callout__title">{{ . }}</p>{{ end }}
+  {{ .Inner | markdownify }}
+</div>

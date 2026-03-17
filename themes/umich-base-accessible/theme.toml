@@ -1,0 +1,7 @@
+name = "umich-base-accessible"
+license = "MIT"
+description = "A Hugo theme inspired by digitalscholarship.umich.edu, using the University of Michigan brand palette, Noto Sans and Rajdhani typography."
+
+[author]
+  name = ""
+  homepage = ""

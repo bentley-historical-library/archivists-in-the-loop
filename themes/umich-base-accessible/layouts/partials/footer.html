@@ -1,0 +1,30 @@
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+
+    {{ if .Site.Params.footerLogo }}
+      <div class="footer-logo">
+        <a href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }} home">
+          <img src="{{ .Site.Params.footerLogo }}" alt="{{ .Site.Title }}">
+        </a>
+      </div>
+    {{ end }}
+
+    {{ with .Site.Menus.footer }}
+      <nav class="footer-navigation" aria-label="Footer menu">
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+
+    <div class="site-info">
+      {{ with .Site.Params.footerText }}
+        <p>{{ . | safeHTML }}</p>
+      {{ end }}
+      <p class="copyright">&copy; {{ now.Year }} {{ .Site.Params.copyrightHolder }}</p>
+    </div>
+
+  </div>
+</footer>

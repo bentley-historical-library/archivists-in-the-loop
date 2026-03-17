@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article id="post-{{ .File.UniqueID }}" class="entry">
+
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+    {{ if not .Params.hideMeta }}
+      <div class="entry-meta">
+        {{ if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+      </div>
+    {{ end }}
+  </header>
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+</article>
+{{ end }}

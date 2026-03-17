@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="no-js">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{- if .IsHome }}home{{ else }}singular{{ end }} {{ with .Params.bodyClass }}{{ . }}{{ end -}}">
+
+  <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+  {{ partial "header.html" . }}
+
+  <div class="site-content{{ if .Params.fullWidth }} site-content--full{{ end }}">
+    <main id="main" class="site-main" role="main">
+      {{- block "main" . }}{{- end }}
+    </main>
+  </div>
+
+  {{ partial "footer.html" . }}
+
+</body>
+</html>

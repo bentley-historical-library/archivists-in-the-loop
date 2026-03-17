@@ -1,0 +1,12 @@
+{{/*
+  section-heading shortcode
+  Usage: {{< section-heading level="2" color="teal" >}}My Heading{{< /section-heading >}}
+  Parameters:
+    level  — heading level: 2 (default), 3, or 4
+    color  — accent bar color: "maize" (default), "teal", "blue", "red"
+*/}}
+{{ $level := .Get "level" | default "2" }}
+{{ $color := .Get "color" | default "maize" }}
+<div class="shortcode-section-heading shortcode-section-heading--{{ $color }}">
+  <h{{ $level }}>{{ .Inner | markdownify }}</h{{ $level }}>
+</div>

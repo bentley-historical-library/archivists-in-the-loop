@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article id="post-{{ .File.UniqueID }}" class="entry{{ if .Params.fullWidth }} entry--full-width{{ end }}">
+
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+    {{ if not .Params.hideMeta }}
+      <div class="entry-meta">
+        <!-- placeholder section for page metadata, like post date or author -->
+      </div>
+    {{ end }}
+  </header>
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+</article>
+{{ end }}

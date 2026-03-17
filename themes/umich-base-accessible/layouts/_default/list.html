@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="archive">
+
+  <header class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Description }}<div class="archive-description">{{ . | markdownify }}</div>{{ end }}
+  </header>
+
+  <div class="posts-list">
+    {{ range .Pages }}
+      <article class="post-card">
+        <h2 class="post-card__title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        {{ if not .Date.IsZero }}
+          <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+        {{ with .Summary }}
+          <p class="post-card__summary">{{ . }}</p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="post-card__link">Read more</a>
+      </article>
+    {{ else }}
+      <p>No posts yet.</p>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+
+</div>
+{{ end }}

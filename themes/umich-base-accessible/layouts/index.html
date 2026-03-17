@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+  {{ with .Site.Params.hero }}
+  <section class="hero-banner">
+    <div class="hero-banner__inner alignwide">
+      {{ with .heading }}<h1 class="hero-banner__heading">{{ . }}</h1>{{ end }}
+      {{ with .subheading }}<p class="hero-banner__subheading">{{ . }}</p>{{ end }}
+      {{ with .cta }}
+        <a href="{{ .url }}" class="button button--primary">{{ .label }}</a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <div class="home-content alignwide">
+    {{ .Content }}
+  </div>
+
+  {{ if .Site.Params.showRecentPosts }}
+  <section class="recent-posts alignwide">
+    <h2 class="section-title">Recent Updates</h2>
+    <div class="posts-list">
+      {{ range first 3 (where .Site.RegularPages "Type" "updates") }}
+        <article class="post-card">
+          <h3 class="post-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ if not .Date.IsZero }}
+            <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{ end }}
+          {{ with .Summary }}<p class="post-card__summary">{{ . }}</p>{{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+{{ end }}

@@ -1,0 +1,43 @@
+<header id="masthead" class="site-header" role="banner">
+  <div class="site-header__inner">
+
+    <div class="site-branding">
+      {{ if .Site.Params.logo }}
+        <a href="{{ "/" | relURL }}" class="site-logo" aria-label="{{ .Site.Title }} home">
+          <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+        </a>
+      {{ else }}
+        <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+      {{ end }}
+    </div>
+
+    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="Primary menu">
+      {{ $currentPage := . }}
+      <ul class="menu-wrapper">
+        {{ range .Site.Menus.main }}
+          <li class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} current-menu-item{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  (function() {
+    var toggle = document.querySelector('.menu-toggle');
+    var nav = document.querySelector('.primary-navigation');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('is-open');
+    });
+  })();
+</script>
