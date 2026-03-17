@@ -48,36 +48,14 @@ archivists-in-the-loop/
 
 ## Getting Started
 
-### Prerequisites
-
-Install Hugo (extended version recommended):
-
-```bash
-brew install hugo          # macOS
-```
-
-Verify the install:
-
-```bash
-hugo version
-```
+To develop or run this site locally, it is recommended to install [Hugo](https://gohugo.io/), a static site generator framework.
+See Hugo's [Quick Start guide](https://gohugo.io/getting-started/quick-start/).
 
 ### Run the local development server
 
-```bash
-cd archivists-in-the-loop
-hugo server -D
-```
-
-Open [http://localhost:1313](http://localhost:1313) in your browser. The site reloads automatically when you save any file. The `-D` flag includes draft pages.
-
-### Build the site for production
-
-```bash
-hugo
-```
-
-Output is written to the `public/` directory.
+To run the site locally, download the GitHub repository, unzip, and then run the `hugo server` command.
+Open [http://localhost:1313](http://localhost:1313) in your browser.
+The site reloads automatically when you save any file. The `-D` flag includes draft pages.
 
 ---
 
