@@ -1,6 +1,10 @@
 # Archivists in the Loop — Site Documentation
 
-A Hugo site using the **umich-base-accessible** theme, styled after [digitalscholarship.umich.edu](https://digitalscholarship.umich.edu) with the official University of Michigan brand palette, Noto Sans and Rajdhani typography, and a clean responsive layout.
+A site powered by the Hugo static site framework. The theme, called **umich-base-accessible**,
+was styled with some inspiration from [digitalscholarship.umich.edu](https://digitalscholarship.umich.edu)
+and the U-M Library's publishing framework, using the University of Michigan's brand palette as base colors, Noto Sans and Rajdhani typography, and a responsive layout. Assistance with porting the theme, hugo templates,
+CSS, and documentation was provided by Claude Code. Underlying structures and accessibility features
+may require further attention in future.
 
 ---
 
