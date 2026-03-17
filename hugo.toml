@@ -1,0 +1,87 @@
+# ============================================================
+# Hugo configuration — umich-base-accessible theme
+# Replace baseURL with your GitHub Pages URL before deploying
+# ============================================================
+
+baseURL = "" # "https://<your-github-username>.github.io/<repo-name>/"
+languageCode = "en-us"
+title = "Archivists in the Loop"
+theme = "umich-base-accessible"
+
+# Paginate list pages
+paginate = 10
+
+# GitHub Pages uses ugly URLs by default; this keeps clean /page/ paths
+uglyURLs = false
+relativeURLs = false
+
+[params]
+  description = "A project site."   # fallback meta description
+
+  # Path to header logo (place file in static/)
+  # logo = "/images/site-logo.png"
+
+  # Path to a separate (lighter) footer logo
+  # footerLogo = "/images/site-logo-footer.png"
+
+  # Text or HTML shown in the footer above the copyright line
+  footerText = "Archivists in the Loop is sponsored by the Bentley Historical Library and the University of Michigan School of Information"
+  copyrightHolder = "Regents of the University of Michigan"
+
+  # Favicon (place file in static/)
+  # favicon = "/favicon.png"
+
+  # Set to true to show a "Recent Posts" block on the homepage
+  showRecentPosts = true
+
+  # Hero banner on the homepage
+  # [params.hero]
+  #   heading    = "Archivists in the Loop"
+  #   subheading = "A symposium on archival reference services in the generative AI moment"
+  #   color = "red"
+  #   [params.hero.cta]
+  #     label = "Learn more"
+  #     url   = "/about/"
+
+# ------------------------------------------------------------
+# Main navigation menu
+# ------------------------------------------------------------
+[menu]
+  [[menu.main]]
+    name       = "About"
+    url        = "/about/"
+    weight     = 10
+  [[menu.main]]
+    name       = "Participants"
+    url        = "/participants/"
+    weight     = 20
+  [[menu.main]]
+    name       = "Schedule"
+    url        = "/schedule/"
+    weight     = 30
+  [[menu.main]]
+    name       = "Updates"
+    url        = "/updates/"
+    weight     = 40
+
+# Optional footer menu
+# [[menu.footer]]
+#   name   = "Contact"
+#   url    = "/contact/"
+#   weight = 10
+
+# ------------------------------------------------------------
+# Markup settings
+# ------------------------------------------------------------
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true   # allows raw HTML in Markdown content
+
+  [markup.highlight]
+    style = "monokai"
+
+# ------------------------------------------------------------
+# Build output for GitHub Pages
+# ------------------------------------------------------------
+[build]
+  writeStats = false
