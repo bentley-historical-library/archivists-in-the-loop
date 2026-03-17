@@ -1,0 +1,46 @@
+{{ define "main" }}
+{{ $data := hugo.Data.participants }}
+<article id="post-{{ .File.UniqueID }}" class="entry{{ if .Params.fullWidth }} entry--full-width{{ end }}">
+
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="entry-content">
+    {{ .Content }}
+
+    <h2>Convenors</h2>
+    <ul>
+      {{ range $data.convenors }}
+      <li>{{ .name }}, {{ .institution }}</li>
+      {{ end }}
+    </ul>
+
+    <h2>Advisory Board</h2>
+    <ul>
+      {{ range $data.advisory_board }}
+      <li>{{ .name }}, {{ .institution }}</li>
+      {{ end }}
+    </ul>
+
+    <h2>Symposium Participants</h2>
+    <ul>
+      {{ range $data.symposium_participants }}
+      <li>{{ .name }}, {{ .institution }}</li>
+      {{ end }}
+    </ul>
+
+    <div class="shortcode-banner-heading shortcode-banner-heading--red">
+      <div class="shortcode-banner-heading__inner">
+        <h2>Sponsors</h2>
+      </div>
+    </div>
+    <ul>
+      {{ range $data.sponsors }}
+      <li><a href="{{ .url }}">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+</article>
+{{ end }}
