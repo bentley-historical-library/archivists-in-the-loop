@@ -116,6 +116,10 @@ body {
   padding-bottom: var(--spacing-xl);
 }
 
+.home .site-content {
+  padding-top: 0;
+}
+
 /* Full-width page variant — entry fills viewport, content gets its own padding */
 .site-content--full .entry {
   padding-left: 0;
@@ -468,7 +472,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
    9. HERO BANNER
    ------------------------------------------------------------ */
 .hero-banner {
-  background-color: var(--color-um-blue);
+  background-color: var(--color-a2-amethyst);
   color: #fff;
   padding: var(--spacing-xl) var(--site-padding);
 }
@@ -479,7 +483,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 
 .hero-banner__heading {
   font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
-  color: #fff;
+  color: var(--color-um-maize);
   margin-bottom: var(--spacing-sm);
 }
 

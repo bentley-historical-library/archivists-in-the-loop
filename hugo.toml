@@ -35,10 +35,10 @@ relativeURLs = false
   showRecentPosts = true
 
   # Hero banner on the homepage
-  # [params.hero]
-  #   heading    = "Archivists in the Loop"
-  #   subheading = "A symposium on archival reference services in the generative AI moment"
-  #   color = "red"
+  [params.hero]
+    heading    = "Archivists in the Loop"
+    subheading = "A symposium on archival reference services in the generative AI moment"
+    color = "red"
   #   [params.hero.cta]
   #     label = "Learn more"
   #     url   = "/about/"
