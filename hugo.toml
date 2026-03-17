@@ -85,3 +85,7 @@ relativeURLs = false
 # ------------------------------------------------------------
 [build]
   writeStats = false
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
