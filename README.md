@@ -30,16 +30,16 @@ archivists-in-the-loop/
     ├── theme.toml                  Theme metadata
     ├── assets/css/main.css         All styles; UM colors defined as CSS variables
     └── layouts/
-        ├── _default/
-        │   ├── baseof.html         Base HTML wrapper (html, head, body)
-        │   ├── single.html         Template for individual pages and posts
-        │   └── list.html           Template for section index pages
-        ├── partials/
-        │   ├── head.html           <head> contents: fonts, stylesheet, meta tags
-        │   ├── header.html         Sticky site header with logo and navigation
-        │   └── footer.html         Site footer with optional logo, menu, and text
-        ├── index.html              Homepage template (optional hero + content)
-        └── shortcodes/             Reusable content components (see below)
+        ├── _partials/          Reusable content components (see below)
+        |   ├── head.html           <head> contents: fonts, stylesheet, meta tags
+        |   ├── header.html         Sticky site header with logo and navigation
+        |   └── footer.html         Site footer with optional logo, menu, and text
+        ├── _shortcodes/        Reusable content components
+        ├── baseof.html         Base HTML wrapper (html, head, body)
+        ├── home.html           Homepage template (optional hero + content)
+        ├── single.html         Template for individual pages and posts
+        ├── list.html           Template for section index pages
+        └── participants.html   Template for participant list page
 ```
 
 ---
