@@ -1,0 +1,4 @@
+<figure>
+  <img src="{{ .Get "src" | relURL }}" alt="{{ .Get "alt" }}"{{ with .Get "title" }} title="{{ . }}"{{ end }}>
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end -}}
+</figure>
