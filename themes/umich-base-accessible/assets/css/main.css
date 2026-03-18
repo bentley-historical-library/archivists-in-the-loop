@@ -500,7 +500,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 
 .hero-banner__graphic {
   width: auto;
-  margin-bottom: 1.0rem;
+  margin-bottom: var(--spacing-lg);
   border: 2px var(--color-um-maize);
 }
 
