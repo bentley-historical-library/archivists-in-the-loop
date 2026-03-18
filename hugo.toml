@@ -18,8 +18,8 @@ relativeURLs = false
 [params]
   description = "Archivists in the Loop: A symposium on archival reference services in the generative AI moment"
 
-  # Social site preview logo
-  ogImage = "/images/basic-ai-symposium-graphic.png"
+  # Social site preview logo (place file in static/ and do not precede with a slash)
+  ogImage = "images/basic-ai-symposium-graphic.png"
 
 
   # Path to header logo (place file in static/)
