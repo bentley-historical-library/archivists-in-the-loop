@@ -3,6 +3,7 @@
   {{ with .Site.Params.hero }}
   <section class="hero-banner">
     <div class="hero-banner__inner alignwide">
+      {{ with .heroImage }}<img class="hero-banner__graphic" src="{{ . | relURL }}" alt="Graphic with the title of the Archivists in the Loop symposium and sponsor logos" />{{ end }}
       {{ with .heading }}<h1 class="hero-banner__heading">{{ . }}</h1>{{ end }}
       {{ with .subheading }}<p class="hero-banner__subheading">{{ . }}</p>{{ end }}
       {{ with .cta }}

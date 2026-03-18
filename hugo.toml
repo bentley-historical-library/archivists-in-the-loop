@@ -42,7 +42,8 @@ relativeURLs = false
   [params.hero]
     heading    = "Archivists in the Loop"
     subheading = "A symposium on archival reference services in the generative AI moment"
-    color = "red"
+    color      = "red"
+    heroImage  = "images/basic-ai-symposium-graphic.png"
   #   [params.hero.cta]
   #     label = "Learn more"
   #     url   = "/about/"
