@@ -177,7 +177,7 @@ Place the image in `static/images/` and reference it in Markdown:
 ![Alt text](/images/my-photo.jpg)
 ```
 
-Or use the `figure-block` shortcode for a captioned image (see below).
+Or use the `figure` shortcode for a captioned image (see below). Avoid bare Markdown image syntax (`![alt](path)`) for images in `static/` — it does not apply `relURL` and will break on GitHub Pages.
 
 ---
 
@@ -229,6 +229,27 @@ This workshop requires registration. Seats are limited.
 {{</* callout color="red" title="Deadline" */>}}
 Applications close on March 31.
 {{</* /callout */>}}
+```
+
+---
+
+### `figure`
+
+A replacement for Hugo's built-in `figure` shortcode that correctly applies `relURL` to the image path. Use this whenever embedding images from `static/` in content pages — bare Markdown image syntax does not resolve subpaths correctly on GitHub Pages.
+
+**Parameters:**
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `src` | yes | Path to the image (e.g. `/images/photo.jpg`) — leading slash required |
+| `alt` | yes | Alt text for screen readers and SEO |
+| `title` | no | Tooltip text on the image element |
+| `caption` | no | Caption text displayed below the image |
+
+**Usage:**
+
+```hugo
+{{</* figure src="/images/workshop.jpg" alt="Participants at a digital scholarship workshop" caption="Spring 2023 workshop." */>}}
 ```
 
 ---
