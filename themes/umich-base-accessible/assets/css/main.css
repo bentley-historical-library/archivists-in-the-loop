@@ -47,7 +47,7 @@
   --color-footer-text:       #FFFFFF;
 
   /* Hero feature */
-  --color-hero-bg:           var(--color-arboretum-blue);
+  --color-hero-bg:           var(--color-rackham-green);
   --color-hero-title:        var(--color-um-maize);
 
   /* ------------------------------------------------------------
@@ -496,6 +496,12 @@ tr:nth-child(even) td { background: var(--color-surface); }
   color: rgba(255,255,255,0.85);
   max-width: 640px;
   margin: 0 auto var(--spacing-md);
+}
+
+.hero-banner__graphic {
+  width: auto;
+  margin-bottom: 1.0rem;
+  border: 2px var(--color-um-maize);
 }
 
 /* ------------------------------------------------------------
