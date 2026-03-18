@@ -16,7 +16,11 @@ uglyURLs = false
 relativeURLs = false
 
 [params]
-  description = "A project site."   # fallback meta description
+  description = "Archivists in the Loop: A symposium on archival reference services in the generative AI moment"
+
+  # Social site preview logo
+  ogImage = "/images/basic-ai-symposium-graphic.png"
+
 
   # Path to header logo (place file in static/)
   # logo = "/images/site-logo.png"
@@ -29,7 +33,7 @@ relativeURLs = false
   copyrightHolder = "Regents of the University of Michigan"
 
   # Favicon (place file in static/)
-  # favicon = "/favicon.png"
+  favicon = "/favicon.ico"
 
   # Set to true to show a "Recent Posts" block on the homepage
   showRecentPosts = true
