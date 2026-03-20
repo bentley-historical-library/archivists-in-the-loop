@@ -18,14 +18,14 @@
 
     <h2>Advisory Board</h2>
     <ul>
-      {{ range $data.advisory_board }}
+      {{ range sort $data.advisory_board "sort_name" }}
       <li>{{ .name }}, {{ .institution }}</li>
       {{ end }}
     </ul>
 
     <h2>Symposium Participants</h2>
     <ul>
-      {{ range $data.symposium_participants }}
+      {{ range sort $data.symposium_participants "sort_name" }}
       <li>{{ .name }}, {{ .institution }}</li>
       {{ end }}
     </ul>

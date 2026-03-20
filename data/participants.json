@@ -4,21 +4,21 @@
     { "name": "Meghan Courtney", "institution": "Bentley Historical Library" }
   ],
   "advisory_board": [
-    { "name": "Wendy Duff", "institution": "University of Toronto" },
-    { "name": "maría matienzo", "institution": "University of California Berkeley" },
-    { "name": "Natalie Bond", "institution": "University of Montana" }
+    { "name": "Wendy Duff", "sort_name": "Duff", "institution": "University of Toronto" },
+    { "name": "maría matienzo", "sort_name": "matienzo", "institution": "University of California Berkeley" },
+    { "name": "Natalie Bond", "sort_name": "Bond", "institution": "University of Montana" }
   ],
   "symposium_participants": [
-    { "name": "Graham Hukill", "institution": "Massachusetts Institute of Technology Libraries" },
-    { "name": "Cal Lee", "institution": "University of North Carolina at Chapel Hill" },
-    { "name": "Nina Rao", "institution": "Emory University" },
-    { "name": "Dallas Card", "institution": "University of Michigan School of Information" },
-    { "name": "Julia Corrin", "institution": "Carnegie Mellon University" },
-    { "name": "Max Eckard", "institution": "Bentley Historical Library, University of Michigan" },
-    { "name": "Josue Hurtado", "institution": "Temple University" },
-    { "name": "Alison Clemens", "institution": "Yale University / Society of American Archivists Council" },
-    { "name": "Isabel Planton", "institution": "Bentley Historical Library" },
-    { "name": "Jennifer Fauxsmith", "institution": "Harvard University Libraries" }
+    { "name": "Graham Hukill", "sort_name": "Hukill", "institution": "Massachusetts Institute of Technology Libraries" },
+    { "name": "Cal Lee", "sort_name": "Lee", "institution": "University of North Carolina at Chapel Hill" },
+    { "name": "Nina Rao", "sort_name": "Rao", "institution": "Emory University" },
+    { "name": "Dallas Card", "sort_name": "Card", "institution": "University of Michigan School of Information" },
+    { "name": "Julia Corrin", "sort_name": "Corrin", "institution": "Carnegie Mellon University" },
+    { "name": "Max Eckard", "sort_name": "Eckard", "institution": "Bentley Historical Library, University of Michigan" },
+    { "name": "Josue Hurtado", "sort_name": "Hurtado", "institution": "Temple University" },
+    { "name": "Alison Clemens", "sort_name": "Clemens", "institution": "Yale University / Society of American Archivists Council" },
+    { "name": "Isabel Planton", "sort_name": "Planton", "institution": "Bentley Historical Library" },
+    { "name": "Jennifer Fauxsmith", "sort_name": "Fauxsmith", "institution": "Harvard University Libraries" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
