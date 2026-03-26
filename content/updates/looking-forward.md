@@ -16,7 +16,7 @@ Invited participants should expect to hear from the organizers, or UMSI's events
 who will be helping us to arrange all of the logistics.
 
 In the meantime, if you have questions about the event or are interested in
-learning more about the project, please out to the
+learning more about the project, please reach out to the
 organizers at [jajohnst@umich.edu](mailto:jajohnst@umich.edu) and [megcourt@umich.edu](mailto:megcourt@umich.edu).
 
 Stay tuned for updates!
