@@ -6,6 +6,9 @@ layout: post
 author: # insert author name
 ---
 
+This update has information about the recommended hotel option
+for those attending from out of town.<!--more-->
+
 ## Symposium Hotel
 
 As folks are making travel plans, please note that
