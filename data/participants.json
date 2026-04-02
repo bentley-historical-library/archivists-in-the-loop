@@ -23,7 +23,8 @@
     { "name": "Hillel Arnold", "sort_name": "arnold", "institution": "Rockefeller Archive Center" },
     { "name": "Lavinia Dunagan", "sort_name": "dunagan", "institution": "University of Michigan School of Information" },
     { "name": "Abbey Potter", "sort_name": "potter", "institution": "Library of Congress" },
-    { "name": "John Weise", "sort_name": "weise", "institution": "University of Michigan Library" }
+    { "name": "John Weise", "sort_name": "weise", "institution": "University of Michigan Library" },
+    { "name": "Libby Hemphill", "sort_name": "hemphill", "institution": "University of Michigan School of Information" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
