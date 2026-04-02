@@ -1,7 +1,8 @@
 {
   "convenors": [
     { "name": "Jesse Johnston", "institution": "University of Michigan School of Information" },
-    { "name": "Meghan Courtney", "institution": "Bentley Historical Library" }
+    { "name": "Meghan Courtney", "institution": "Bentley Historical Library" },
+    { "name": "Jess Farrel", "institution": "Redstart Works" }
   ],
   "advisory_board": [
     { "name": "Wendy Duff", "sort_name": "Duff", "institution": "University of Toronto" },
