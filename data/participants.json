@@ -18,7 +18,8 @@
     { "name": "Josue Hurtado", "sort_name": "Hurtado", "institution": "Temple University" },
     { "name": "Alison Clemens", "sort_name": "Clemens", "institution": "Yale University / Society of American Archivists Council" },
     { "name": "Isabel Planton", "sort_name": "Planton", "institution": "Bentley Historical Library" },
-    { "name": "Jennifer Fauxsmith", "sort_name": "Fauxsmith", "institution": "Harvard University Libraries" }
+    { "name": "Jennifer Fauxsmith", "sort_name": "Fauxsmith", "institution": "Harvard University Libraries" },
+    { "name": "Hillel Arnold", "sort_name": "arnold", "institution": "Rockefeller Archive Center" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
