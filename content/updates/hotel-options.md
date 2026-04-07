@@ -1,5 +1,6 @@
 ---
 date: '2026-03-26T09:19:32-04:00'
+updated: '2026-04-07T12:35:00-04:00
 draft: false
 title: 'Where to Stay'
 layout: post
