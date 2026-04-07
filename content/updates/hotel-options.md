@@ -2,12 +2,13 @@
 date: '2026-03-26T09:19:32-04:00'
 updated: '2026-04-07T12:35:00-04:00'
 draft: false
-title: 'Where to Stay'
+title: 'Logistics for Lodging and Travel'
 layout: post
 author: # insert author name
 ---
 
-This update has information about the recommended hotel option
+This update has information about the overall schedule,
+travel planning, and recommended hotel option
 for those attending from out of town.<!--more-->
 
 ## Symposium Hotel
