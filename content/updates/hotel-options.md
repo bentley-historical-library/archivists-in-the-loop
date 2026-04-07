@@ -1,7 +1,7 @@
 ---
 date: '2026-03-26T09:19:32-04:00'
 draft: false
-title: 'Hotel Options'
+title: 'Where to Stay'
 layout: post
 author: # insert author name
 ---
@@ -19,6 +19,10 @@ The block has rooms for $231 per night.
 
 If you are booking through Collegiate Travel Partners, they should have information about the room block.
 If you are booking directly, please mention that you are part of the group participating in the "Archivists in the Loop" symposium at the School of Information & Bentley Historical Library.
+
+Note that we plan to be meeting all day on Thursday, June 4, and until 3:00 p.m. on Friday, June 5.
+We therefore suggest to arrive on Wednesday. On Friday, for those wishing to travel home,
+you may choose to do so in the afternoon, or stay until Saturday.
 
 ## Symposium Location
 
