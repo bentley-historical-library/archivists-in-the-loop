@@ -25,7 +25,8 @@
     { "name": "John Weise", "sort_name": "weise", "institution": "University of Michigan Library" },
     { "name": "Libby Hemphill", "sort_name": "hemphill", "institution": "University of Michigan School of Information" },
     { "name": "Meg McMahon", "sort_name": "mcmahon", "institution": "Harvard University" },
-    { "name": "Jennifer Fauxsmith", "sort_name": "fauxs", "institution": "Harvard Radcliffe Institute" }
+    { "name": "Jennifer Fauxsmith", "sort_name": "fauxs", "institution": "Harvard Radcliffe Institute" },
+    { "name": "Hannah Scates Kettler", "sort_name": "scates", "institution": "Iowa State University" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
