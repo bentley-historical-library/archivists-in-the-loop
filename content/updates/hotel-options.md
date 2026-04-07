@@ -7,6 +7,8 @@ layout: post
 author: # insert author name
 ---
 
+{{< figure src="images/leinweber-stairs-cropped.png" alt="Picture of people sitting on an outdoor staircase on the University of Michigan North campus" >}}
+
 This update has information about the overall schedule,
 travel planning, and recommended hotel option
 for those attending from out of town.<!--more-->
