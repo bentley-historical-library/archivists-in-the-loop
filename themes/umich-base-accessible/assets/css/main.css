@@ -586,7 +586,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .post-card__summary {
   font-size: var(--font-size-sm);
   color: var(--color-text-light);
-  flex: 1;
+  //* flex: 1; // remove to correct spacing *//
   margin: 0;
 }
 
