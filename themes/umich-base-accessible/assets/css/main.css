@@ -369,12 +369,15 @@ tr:nth-child(even) td { background: var(--color-surface); }
   text-decoration: none;
   color: var(--color-header-text);
 }
+.site-branding a:hover {
+  color: var(--color-um-maize);
+}
 .site-title {
   font-family: var(--font-heading);
   font-size: var(--font-size-2xl);
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--color-header-text) !important;
+  color: var(--color-header-text);
 }
 .site-logo img {
   height: 48px;
