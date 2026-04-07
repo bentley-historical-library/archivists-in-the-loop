@@ -1,7 +1,7 @@
 {
   "convenors": [
     { "name": "Jesse Johnston", "institution": "University of Michigan School of Information" },
-    { "name": "Meghan Courtney", "institution": "Bentley Historical Library" },
+    { "name": "Meghan Courtney", "institution": "Bentley Historical Library, University of Michigan" },
     { "name": "Jess Farrell", "institution": "Redstart Works" }
   ],
   "advisory_board": [
@@ -18,7 +18,7 @@
     { "name": "Max Eckard", "sort_name": "Eckard", "institution": "Bentley Historical Library, University of Michigan" },
     { "name": "Josué Hurtado", "sort_name": "Hurtado", "institution": "Temple University Libraries" },
     { "name": "Alison Clemens", "sort_name": "Clemens", "institution": "Yale University / Society of American Archivists Council" },
-    { "name": "Isabel Planton", "sort_name": "Planton", "institution": "Bentley Historical Library" },
+    { "name": "Isabel Planton", "sort_name": "Planton", "institution": "Bentley Historical Library, University of Michigan" },
     { "name": "Hillel Arnold", "sort_name": "arnold", "institution": "Rockefeller Archive Center" },
     { "name": "Lavinia Dunagan", "sort_name": "dunagan", "institution": "University of Michigan School of Information" },
     { "name": "Abbey Potter", "sort_name": "potter", "institution": "Library of Congress" },
