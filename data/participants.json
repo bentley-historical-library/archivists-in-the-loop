@@ -24,7 +24,7 @@
     { "name": "Abbey Potter", "sort_name": "potter", "institution": "Library of Congress" },
     { "name": "John Weise", "sort_name": "weise", "institution": "University of Michigan Library" },
     { "name": "Meg McMahon", "sort_name": "mcmahon", "institution": "Harvard University Libraries" },
-    { "name": "Jennifer Fauxsmith", "sort_name": "fauxs", "institution": "Harvard Radcliffe Institute" },
+    { "name": "Jennifer Fauxsmith", "sort_name": "fauxs", "institution": "Schlesinger Library, Harvard Radcliffe Institute" },
     { "name": "Hannah Scates Kettler", "sort_name": "scates", "institution": "Iowa State University" }
   ],
   "sponsors": [
