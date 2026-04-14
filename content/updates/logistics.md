@@ -36,5 +36,5 @@ we have arranged for a block of rooms at
 at 120 W. Huron Street in Ann Arbor.
 The block has rooms for $231 per night.
 
-If you are booking through Collegiate Travel Partners, they should have information about the room block.
+If you are booking through Collegiate Travel Planners, they should have information about the room block.
 If you are booking directly, please mention that you are part of the group participating in the "Archivists in the Loop" symposium at the School of Information & Bentley Historical Library.
