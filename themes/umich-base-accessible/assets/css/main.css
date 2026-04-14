@@ -503,6 +503,9 @@ tr:nth-child(even) td { background: var(--color-surface); }
 
 .hero-banner__graphic {
   width: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: var(--spacing-lg);
   border: 2px var(--color-um-maize);
 }
