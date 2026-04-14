@@ -16,6 +16,7 @@ may require further attention in future.
 4. [Creating Content](#creating-content)
 5. [Shortcodes](#shortcodes)
 6. [Color Palette](#color-palette)
+7. [Homepage Image Carousel](#homepage-image-carousel)
 
 ---
 
@@ -317,6 +318,48 @@ All UM brand colors are defined as CSS custom properties in `themes/umich-base-a
 | Puma Black | `--color-puma-black` | `#131516` |
 
 The shortcode `color` parameter values (`maize`, `teal`, `blue`, `red`) map to Maize, Taubman Teal, Michigan Blue, and Tappan Red respectively.
+
+---
+
+## Homepage Image Carousel
+
+The homepage supports an optional image carousel powered by [Splide.js](https://splidejs.com/), a lightweight and accessible slider library. The carousel appears between the hero banner and the main page content, and is only rendered when at least one slide is defined in `hugo.toml`.
+
+Splide.js includes full keyboard navigation, ARIA roles and labels, and autoplay controls that pause on hover and focus — meeting common accessibility requirements.
+
+### Adding slides
+
+Place image files in `static/images/`, then add one `[[params.carousel.slides]]` entry per image in `hugo.toml`:
+
+```toml
+[[params.carousel.slides]]
+  image   = "images/symposium-photo.jpg"
+  alt     = "Archivists gathered for a workshop discussion"
+  caption = "Optional caption displayed below the slide"
+
+[[params.carousel.slides]]
+  image   = "images/bentley-reading-room.jpg"
+  alt     = "The Bentley Historical Library reading room"
+```
+
+Slides appear in the order they are listed. The `caption` field is optional; omit it to show the image without any text below.
+
+### Carousel settings
+
+The `[params.carousel]` block in `hugo.toml` controls autoplay behavior:
+
+| Field | Default | Description |
+| --- | --- | --- |
+| `autoplay` | `true` | Set to `false` to disable automatic slide advancement |
+| `autoplayInterval` | `5000` | Milliseconds between slides when autoplay is on |
+
+```toml
+[params.carousel]
+  autoplay         = true
+  autoplayInterval = 5000
+```
+
+Splide's CSS and JS are loaded from a CDN only on the homepage and only when slides are defined, so there is no performance impact on other pages.
 
 ### Changing header and footer colors
 

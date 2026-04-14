@@ -48,6 +48,33 @@ relativeURLs = false
   #     label = "Learn more"
   #     url   = "/about/"
 
+  # Featured image carousel on the homepage.
+  # Add one [[params.carousel.slides]] entry per image.
+  # Set autoplay = false to disable auto-advancing.
+  [params.carousel]
+    autoplay         = true
+    autoplayInterval = 5000   # milliseconds between slides
+
+  # [[params.carousel.slides]]
+  #   image   = "images/example-photo.jpg"
+  #   alt     = "Descriptive alt text for the image"
+  #   caption = "Optional caption displayed below the slide"
+  [[params.carousel.slides]]
+    image   = "images/archivists-in-the-loop-graphic-carousel1.jpg"
+    alt     = "Graphic with the text Archivists in the Loop and an image of people working in an archival reading room."
+  #  caption = "Symposium graphic created by Madeleine Bradford, Bentley Historical Library" 
+  [[params.carousel.slides]]
+    image   = "images/archivists-in-the-loop-graphic-carousel2.jpg"
+    alt     = "Graphic with the text Archivists in the Loop and an image of people working in an archival reading room."
+  #  caption = "Symposium graphic created by Madeleine Bradford, Bentley Historical Library" 
+  [[params.carousel.slides]]
+    image   = "images/archivists-in-the-loop-graphic-carousel3.jpg"
+    alt     = "Graphic with the text Archivists in the Loop and an image of people working in an archival reading room."
+  #  caption = "Symposium graphic created by Madeleine Bradford, Bentley Historical Library"
+  [[params.carousel.slides]]
+    image  = "images/basic-ai-symposium-graphic.png"
+    alt    = "A graphic in blue and maize colors with the text Archivists in the Loop that is used as a visual identifier of the symposium."
+
 # ------------------------------------------------------------
 # Main navigation menu
 # ------------------------------------------------------------

@@ -1,6 +1,55 @@
 {{ define "main" }}
 
+  {{ if .Site.Params.carousel.slides }}
+  <section class="hero-banner hero-banner--carousel">
+    <div class="hero-banner__inner alignwide">
+      <div id="home-splide" class="splide" aria-label="Featured images">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {{ range .Site.Params.carousel.slides }}
+            <li class="splide__slide">
+              <figure>
+                <img src="{{ .image | relURL }}" alt="{{ .alt }}">
+                {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+              </figure>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
   {{ with .Site.Params.hero }}
+  <div class="hero-cta alignwide">
+    {{ with .heading }}<h1 class="hero-banner__heading">{{ . }}</h1>{{ end }}
+    {{ with .subheading }}<p class="hero-banner__subheading">{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#home-splide', {
+        type          : 'loop',
+        autoplay      : {{ if .Site.Params.carousel.autoplay }}true{{ else }}false{{ end }},
+        interval      : {{ with .Site.Params.carousel.autoplayInterval }}{{ . }}{{ else }}5000{{ end }},
+        pauseOnHover  : true,
+        pauseOnFocus  : true,
+        arrows        : true,
+        pagination    : true,
+        i18n: {
+          prev    : 'Previous slide',
+          next    : 'Next slide',
+          first   : 'Go to first slide',
+          last    : 'Go to last slide',
+          slideX  : 'Go to slide %s',
+          pageX   : 'Go to page %s',
+          play    : 'Start autoplay',
+          pause   : 'Pause autoplay',
+        },
+      }).mount();
+    });
+  </script>
+  {{ else }}{{ with .Site.Params.hero }}
   <section class="hero-banner">
     <div class="hero-banner__inner alignwide">
       {{ with .heroImage }}<img class="hero-banner__graphic" src="{{ . | relURL }}" alt="Graphic with the title of the Archivists in the Loop symposium and sponsor logos" />{{ end }}
@@ -11,7 +60,7 @@
       {{ end }}
     </div>
   </section>
-  {{ end }}
+  {{ end }}{{ end }}
 
   <div class="home-content alignwide">
     {{ .Content }}

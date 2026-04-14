@@ -14,4 +14,8 @@
 
 {{ with .Site.Params.favicon }}<link rel="icon" href="{{ . }}">{{ end }}
 
+{{ if and .IsHome .Site.Params.carousel.slides }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+{{ end }}
+
 {{ partial "opengraph.html" . }}
