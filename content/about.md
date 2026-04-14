@@ -4,6 +4,8 @@ date: 2026-03-17T10:52:46-04:00
 draft: false
 ---
 
+{{< figure src="images/basic-ai-symposium-graphic.png" alt="Archivists in the Loop title graphic" >}}
+
 {{< callout color="teal" title="Ask an Archivist? Or Ask an AI? What would you do?" >}}
 _The Archivists in the Loop symposium will be a meeting of the minds to develop useful, actionable recommendations for how archivists can provide reference services alongside generative AI tools._
 {{< /callout >}}
