@@ -25,7 +25,16 @@
     { "name": "John Weise", "sort_name": "weise", "institution": "University of Michigan Library" },
     { "name": "Meg McMahon", "sort_name": "mcmahon", "institution": "Harvard University Libraries" },
     { "name": "Jennifer Fauxsmith", "sort_name": "fauxs", "institution": "Schlesinger Library, Harvard Radcliffe Institute" },
-    { "name": "Hannah Scates Kettler", "sort_name": "scates", "institution": "Iowa State University" }
+    { "name": "Hannah Scates Kettler", "sort_name": "scates", "institution": "Iowa State University" },
+    { "name": "Mike Shallcross", "sort_name": "shallc", "institution": "Institute for Social Research, ICPSR, University of Michigan" },
+    { "name": "Maggie Vanderford", "sort_name": "vanderf", "institution": "William L. Clements Library, University of Michigan" },
+    { "name": "Joshua Sulser", "sort_name": "sulser", "institution": "William L. Clements Library, University of Michigan" },
+    { "name": "Brendan Quinn", "sort_name": "quinn", "institution": "Northwestern University Libraries" },
+    { "name": "Veronica McGuirren", "sort_name": "mcguirr", "institution": "University of Virginia Library" },
+    { "name": "K Lightly", "sort_name": "lightly", "institution": "University of Virginia Library" },
+    { "name": "Christina Velazquez Fidler", "sort_name": "fidler", "institution": "Bancroft Library, University of California Berkeley" },
+    { "name": "Paul Gallagher", "sort_name": "gallagher", "institution": "Western Michigan University Library" },
+    { "name": "Sarah McLusky", "sort_name": "mclusky", "institution":"Bentley Historical Library, University of Michigan" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
