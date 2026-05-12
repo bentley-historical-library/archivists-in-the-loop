@@ -15,7 +15,7 @@ Below, we are providing additional resources for those looking for more informat
 such as overviews of LLM-based, generative AI tools, and other items that may be of
 interest.<!-- more -->
 
-## Pre-Read Resources
+## Pre-Reads
 
 Everyone should read or review these:
 
