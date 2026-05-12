@@ -29,3 +29,11 @@ Everyone should read or review these:
 - Carolyn Caizzi and Amy Deschenes, “From Card Catalogs to Semantic Search: Building a Human-Centered Discovery Platform Powered by AI Technologies,” Information Technology and Libraries (2026). doi: [10.5860/ital.v45i1.17511](https://dx.doi.org/10.5860/ital.v45i1.17511).
 - AI4LAM (AI for Libraries, Archives, and Museums), [community list of “Introduction to AI” resources](https://ai4lam.github.io/awesome-ai4lam/#introductions-to-ai).
 - MIT Management Teaching & Learning, [Glossary of Generative AI Terms](https://mitsloanedtech.mit.edu/ai/basics/glossary/).
+
+## Additional Resources - AI Projects & Policies of Interest to Archives
+
+- [Running list of RAG projects in libraries/archives](https://docs.google.com/document/d/1-D6mxlrgDM_BccvuOkWIfb7S47j1Jx1HeGf5meigTvs/edit?usp=sharing), collated by Tom Cramer & AI4LAM group
+- ALA Center for the Future of Libraries, "Artificial Intelligence," at <https://www.ala.org/future/trends/artificialintelligence>.
+- ALA Artificial Intelligence Policy Working Group, "Guidance on the Use of Artificial Intelligence in Libraries" (April 2026 DRAFT), PDF available at <https://www.ala.org/sites/default/files/2026-04/AI%20Working%20Group%20-%20%20DRAFT%20for%20ALA%20Board%20Council%20and%20Members.pdf>.
+- Claire Kelley, "Solidarity in Action: Labor, AI, and the Future of Libraries," _Library Journal_ (July 2025), [available online](https://www.libraryjournal.com/story/solidarity-in-action-labor-ai-and-the-future-of-libraries-ala-annual-2025).
+- Other professional groups? 
