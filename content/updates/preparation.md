@@ -33,7 +33,7 @@ here are a few additional resources:
 - Carolyn Caizzi and Amy Deschenes, “From Card Catalogs to Semantic Search: Building a Human-Centered Discovery Platform Powered by AI Technologies,” Information Technology and Libraries (2026). doi: [10.5860/ital.v45i1.17511](https://dx.doi.org/10.5860/ital.v45i1.17511).
 - AI4LAM (AI for Libraries, Archives, and Museums), [community list of “Introduction to AI” resources](https://ai4lam.github.io/awesome-ai4lam/#introductions-to-ai).
 - MIT Management Teaching & Learning, [Glossary of Generative AI Terms](https://mitsloanedtech.mit.edu/ai/basics/glossary/).
-- [AI Fatigue Bibliography (May 2026)](https://www.zotero.org/groups/6545214/miala_ai_fatigue_public), shared at Michigan Academic Library Association 2026 Conference; provides a range of articles and resources that discuss critical approaches to AI adoption and tools. 
+- [AI Fatigue Bibliography (May 2026)](https://www.zotero.org/groups/6545214/miala_ai_fatigue_public), shared at Michigan Academic Library Association 2026 Conference; provides a range of articles and resources that discuss critical approaches to AI adoption and tools.
 
 ## Additional Resources - AI Projects & Policies of Interest to Archives
 
