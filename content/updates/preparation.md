@@ -19,4 +19,4 @@ Everyone should read or review these:
 
 - Duff, Wendy M., Elizabeth Yakel, and Helen Tibbo, “Archival Reference Knowledge,” _American Archivist_ 76 (2013):68–94. DOI: [10.17723/aarc.76.1.x9792xp27140285g](https://dx.doi.org/10.17723/aarc.76.1.x9792xp27140285g).
 - Jesse A. Johnston and Meghan Courtney, “Archival Reference Services in an Age of AI,” _Collections: A Journal for Museum and Archives Professionals_, online first. DOI: [10.1177/15501906261439244](https://dx.doi.org/10.1177/15501906261439244).
-- Emilie Hardman, "Like It or Not, AI Has Arrived in Archives," _Katina Magazine_ (April 2026), available at <https://katinamagazine.org/content/article/open-knowledge/2026/like-it-or-not-ai-has-arrived-in-archives>.jess
+- Emilie Hardman, "Like It or Not, AI Has Arrived in Archives," _Katina Magazine_ (March 2026), available at <https://katinamagazine.org/content/article/open-knowledge/2026/like-it-or-not-ai-has-arrived-in-archives>.
