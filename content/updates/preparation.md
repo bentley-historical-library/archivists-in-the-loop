@@ -6,6 +6,8 @@ layout: post
 author: # insert author name
 ---
 
+{{< figure src="images/archivists-in-the-loop-graphic-carousel3.jpg" alt="Archivists in the Loop title graphic" >}}
+
 We are sharing these resource in advance with the request that
 all participants read or review the "pre-reads" in the hopes of
 developing a shared frame of reference for discussing archival reference and generative AI.
