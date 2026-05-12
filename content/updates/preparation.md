@@ -25,6 +25,10 @@ Everyone should read or review these:
 
 ## Additional Resources - Generative AI
 
+For those who want to catch up or refresh about what we're
+talking about when we talk abou "generative AI" and LLMs,
+here are a few additional resources:
+
 - Andrej Karpathy, “Intro to Large Language Models,” 1-hour talk (November 2023), available at <https://www.youtube.com/watch?v=zjkBMFhNj_g>.
 - Carolyn Caizzi and Amy Deschenes, “From Card Catalogs to Semantic Search: Building a Human-Centered Discovery Platform Powered by AI Technologies,” Information Technology and Libraries (2026). doi: [10.5860/ital.v45i1.17511](https://dx.doi.org/10.5860/ital.v45i1.17511).
 - AI4LAM (AI for Libraries, Archives, and Museums), [community list of “Introduction to AI” resources](https://ai4lam.github.io/awesome-ai4lam/#introductions-to-ai).
