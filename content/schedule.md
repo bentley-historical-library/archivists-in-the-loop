@@ -16,6 +16,7 @@ The agenda will be influenced heavily by participants' contributions and the the
 - Your reference experiences with AI search and thoughts about what effects AI tools are having on archival reference
 - What new practices can accommodate both new realities and our archival reference values
 - How these technologies are affecting archival labor, and what we should do to sustain our ability to hold space for archival reference work
+- What reference archivists need to know, and how much, about AI tools and user needs
 - Anything else that comes up for you from the readings, hearing from others, or your own experiences with reference services/providing access to archives and AI.
 
 | Timing      | Topic                                                                                                                                                                         | Logistics                                  | Energy                                                                                                                                  |
