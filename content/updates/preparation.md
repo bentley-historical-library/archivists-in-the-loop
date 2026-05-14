@@ -26,7 +26,7 @@ Everyone should read or review these:
 ## Additional Resources - Generative AI
 
 For those who want to catch up or refresh about what we're
-talking about when we talk abou "generative AI" and LLMs,
+talking about when we talk about "generative AI" and LLMs,
 here are a few additional resources:
 
 - Andrej Karpathy, “Intro to Large Language Models,” 1-hour talk (November 2023), available at <https://www.youtube.com/watch?v=zjkBMFhNj_g>.
