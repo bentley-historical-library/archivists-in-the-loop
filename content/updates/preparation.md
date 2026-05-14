@@ -36,7 +36,7 @@ here are a few additional resources:
 
 ## Additional Resources - AI Projects & Policies of Interest to Archives
 
-There is already a huge amount of resources discussing the intersection of
+There are already many resources discussing the intersection of
 AI and collections, resource management, and implications for policy and management.
 Here are a few that we've noted:
 
