@@ -34,7 +34,10 @@
     { "name": "K Lighty", "sort_name": "lighty", "institution": "University of Virginia Library" },
     { "name": "Christina Velazquez Fidler", "sort_name": "fidler", "institution": "Bancroft Library, University of California Berkeley" },
     { "name": "Paul Gallagher", "sort_name": "gallagher", "institution": "Western Michigan University Library" },
-    { "name": "Sarah McLusky", "sort_name": "mclusky", "institution":"Bentley Historical Library, University of Michigan" }
+    { "name": "Sarah McLusky", "sort_name": "mclusky", "institution":"Bentley Historical Library, University of Michigan" },
+    { "name": "Maria Vivar-Guzman", "sort_name": "vivar", "institution": "College of Information Studies, University of Maryland" },
+    { "name": "Lindsey Hartman", "sort_name": "hartman", "institution": "Louisiana State University" },
+    { "name": "Ximeng Deng", "sort_name": "deng", "institution": "College of Information Studies, University of Maryland" }
   ],
   "sponsors": [
     { "name": "The Bentley Historical Library", "url": "https://bentley.umich.edu/" },
