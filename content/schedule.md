@@ -7,7 +7,7 @@ fullWidth: true
 
 ## Thursday, June 4
 
-8:30am - 8pm
+9:30am - 4:30pm (sessions); 6:30pm (dinner)
 
 [Leinweber Building](https://www.openstreetmap.org/way/1073629320)
 
@@ -22,7 +22,7 @@ The agenda will be influenced heavily by participants' contributions and the the
 
 | Timing      | Topic                                                                                                                                                                         | Logistics                                  | Energy                                                                                                                                  |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| 9:00        | Coffee and Light Refreshments                                                                                                                                                 | A shuttle will pick up hotel guests around 8:45. | Social. A full complimentary breakfast is provided at the hotel, so eat beforehand if you need to.                                      |
+| 9:00        | Coffee and Light Refreshments                                                                                                                                                 | A shuttle will pick up hotel guests around 8:45. | Social. A full complimentary breakfast is provided at the hotel, so eat beforehand if you want to. |
 | 9:30        | Intros, Sessions: Current state of archival reference practices and how AI is affecting these practices<br><br>Project show & tell of participant experiences and experiments |                                            | Everyone will be asked to introduce themselves.<br><br>There will be some presentation, and one participatory discussion with activity. |
 | 12:30       | Lunch                                                                                                                                                                         | Provided                                   | Social. Optional opportunities to review work on display from breakout groups and morning discussions, and add to them.                 |
 | 1:30        | Identifying shared reference and access values, challenges and opportunities posed by AI access tools                                                                         |                                            | Participatory discussions with activities.                                                                                              |
@@ -32,11 +32,14 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 6:30        | Dinner (out of town guests)                                                                                                                                                                        | Near the hotel.                            | Social                                                                                                                                  |
 
 
-## Friday, June 5 
+## Friday, June 5
+
+9:30am - 3:00pm
+
 | Timing      | Topic                                                                                               | Logistics                                  | Energy                                                                                              |
 | ----------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| 8:30        | Coffee and Light Refreshments                                                                       | A shuttle will pick you up from the hotel. | Social. A full complimentary breakfast is provided at the hotel, so eat beforehand if you need to.  |
-| 9:00        | Continue discussions about themes that arose in Day 1, and surface new themes                       |                                            | TBD - group discussion and possibly activities.                                                     |
+| 9:00        | Coffee and Light Refreshments                                                                       | A shuttle will pick up from the hotel at 8:45. | Social. A full complimentary breakfast is provided at the hotel, so eat beforehand if you want to.  |
+| 9:30        | Continue discussions about themes that arose in Day 1, and surface new themes                       |                                            | TBD - group discussion and possibly activities.                                                     |
 | 10:30       | Break                                                                                               |                                            |                                                                                                     |
 | 11:00       | What archivists need to know to provide reference services today: developing shared recommendations |                                            | Participatory discussions with activities.                                                          |
 | 12:30       | Lunch                                                                                               | Provided                                   | Social. Optional opportunities to review work on display from morning discussions, and add to them. |
