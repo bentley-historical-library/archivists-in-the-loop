@@ -47,4 +47,5 @@ Here are a few that we've noted:
 - [Running list of RAG projects in libraries/archives](https://docs.google.com/document/d/1-D6mxlrgDM_BccvuOkWIfb7S47j1Jx1HeGf5meigTvs/edit?usp=sharing), collated by Tom Cramer & AI4LAM group
 - ALA Center for the Future of Libraries, "Artificial Intelligence," at <https://www.ala.org/future/trends/artificialintelligence>.
 - ALA Artificial Intelligence Policy Working Group, "Guidance on the Use of Artificial Intelligence in Libraries" (April 2026 DRAFT), [PDF available here](https://www.ala.org/sites/default/files/2026-04/AI%20Working%20Group%20-%20%20DRAFT%20for%20ALA%20Board%20Council%20and%20Members.pdf).
+- Thomas Padilla, "Responsible Operations: Data Science, Machine Learning, and AI in Libraries," OCLC Research Report (2019). DOI: [10.25333/xk7z-9g97](https://doi.org/10.25333/xk7z-9g97).
 - Claire Kelley, "Solidarity in Action: Labor, AI, and the Future of Libraries," _Library Journal_ (July 2025), [available online](https://www.libraryjournal.com/story/solidarity-in-action-labor-ai-and-the-future-of-libraries-ala-annual-2025).
