@@ -42,6 +42,7 @@ AI and collections, resource management, and implications for policy and managem
 Here are a few that we've noted:
 
 - Carolyn Caizzi and Amy Deschenes, “From Card Catalogs to Semantic Search: Building a Human-Centered Discovery Platform Powered by AI Technologies,” Information Technology and Libraries (2026). doi: [10.5860/ital.v45i1.17511](https://dx.doi.org/10.5860/ital.v45i1.17511).
+- Library of Congress Labs, _LC Labs AI Planning Framework_, available at <https://libraryofcongress.github.io/labs-ai-framework/>.
 - Mia Ridge, "Hold steady: centering the human in the hype of AI," keynote at the Swedish National Heritage Board in Gothenburg (November 2024), available at <https://www.youtube.com/watch?v=voDWMB-903k>.
 - [Running list of RAG projects in libraries/archives](https://docs.google.com/document/d/1-D6mxlrgDM_BccvuOkWIfb7S47j1Jx1HeGf5meigTvs/edit?usp=sharing), collated by Tom Cramer & AI4LAM group
 - ALA Center for the Future of Libraries, "Artificial Intelligence," at <https://www.ala.org/future/trends/artificialintelligence>.
