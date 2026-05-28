@@ -50,3 +50,8 @@ Here are a few that we've noted, in no particular order:
 - ALA Artificial Intelligence Policy Working Group, "Guidance on the Use of Artificial Intelligence in Libraries" (April 2026 DRAFT), [PDF available here](https://www.ala.org/sites/default/files/2026-04/AI%20Working%20Group%20-%20%20DRAFT%20for%20ALA%20Board%20Council%20and%20Members.pdf).
 - Thomas Padilla, "Responsible Operations: Data Science, Machine Learning, and AI in Libraries," OCLC Research Report (2019). DOI: [10.25333/xk7z-9g97](https://doi.org/10.25333/xk7z-9g97).
 - Claire Kelley, "Solidarity in Action: Labor, AI, and the Future of Libraries," _Library Journal_ (July 2025), [available online](https://www.libraryjournal.com/story/solidarity-in-action-labor-ai-and-the-future-of-libraries-ala-annual-2025).
+
+## Additional Resources - Archival Access and Reference
+
+- Digital Library Federation Born-Digital Access Working Group (DLF BDAWG), "Access Values," (2020), available at <https://osf.io/dzhcp>.
+- Yakel, Elizabeth, and Deborah A. Torres. 2003. "AI: Archival Intelligence and User Expertise," _American Archivist_ 66. DOI: [10.17723/aarc.66.1.q022h85pn51n5800](https://doi.org/10.17723/aarc.66.1.q022h85pn51n5800).
