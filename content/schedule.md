@@ -32,10 +32,9 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 4:45 - 6:30 | Break                                                                                                                                                                         | On your own                                |                                                                                                                                         |
 | 6:30        | Dinner (out of town guests)                                                                                                                                                                        | Near the hotel.                            | Social                                                                                                                                  |
 
-
 ## Friday, June 5
 
-9:30am - 3:00pm
+9:00am - 3:00pm
 
 | Timing      | Topic                                                                                               | Logistics                                  | Energy                                                                                              |
 | ----------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
