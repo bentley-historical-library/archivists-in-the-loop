@@ -5,13 +5,8 @@ draft: false
 fullWidth: true
 ---
 
-## Thursday, June 4
-
-9:30am - 4:30pm (sessions); 6:30pm (dinner)
-
-[Leinweber Building](https://www.openstreetmap.org/way/1073629320)
-
 The agenda will be influenced heavily by participants' contributions and the themes that arise from participants' experiences and ideas. However, the organizers hope that conversations will emerge on:
+
 - The current state of archival reference
 - Our shared values around archival reference
 - Your reference experiences with AI search and thoughts about what effects AI tools are having on archival reference
@@ -19,6 +14,12 @@ The agenda will be influenced heavily by participants' contributions and the the
 - How these technologies are affecting archival labor, and what we should do to sustain our ability to hold space for archival reference work
 - What reference archivists need to know, and how much, about AI tools and user needs
 - Anything else that comes up for you from the readings, hearing from others, or your own experiences with reference services/providing access to archives and AI.
+
+## Thursday, June 4
+
+9:30am - 4:30pm (sessions); 6:30pm (dinner)
+
+[Leinweber Building](https://www.openstreetmap.org/way/1073629320)
 
 | Timing      | Topic                                                                                                                                                                         | Logistics                                  | Energy                                                                                                                                  |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
