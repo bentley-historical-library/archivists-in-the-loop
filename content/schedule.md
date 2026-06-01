@@ -45,6 +45,6 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 11:00       | What archivists need to know to provide reference services today: developing shared recommendations |                                            | Participatory discussions with activities.                                                          |
 | 12:30       | Lunch                                                                                               | Provided                                   | Social. Optional opportunities to review work on display from morning discussions, and add to them. |
 | 1:30-3:00pm | Wrap up: Develop a draft resource together, identify next steps                                     |                                            | Participatory discussions with activities.      |
-| 3:00pm | Conclude and Wrap Up | Dispersal for travel home or social activities | Relax |
+| 3:00pm | Conclude and Wrap Up | Dispersal for travel home, tour, or social activities | Relax |
 | 3:15-4:15pm | Optional Tour of the Bentley Historical Library | Walk from Leinweber to Bentley | Reflect and Rejuvenate |
 | 4:30pm | Wrap up | Shuttle from Bentley Historical Library to hotel | Relax |
