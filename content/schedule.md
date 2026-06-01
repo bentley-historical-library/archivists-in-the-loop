@@ -30,7 +30,7 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 3:00        | Break                                                                                                                                                                         | Coffee provided                            |                                                                                                                                         |
 | 3:30        | Wrap up and prep for tomorrow                                                                                                                                                 |                                            | Participatory discussions with activities.                                                                                              |
 | 4:30 | Wrap Up | Shuttle to hotel leaves Leinweber Building at 4:30 | |
-| 4:30 - 6:30 | Break                                                                                                                                                                         | On your own                                |      Reflection                                                  |
+| 4:30 - 6:30 | Break                                                                                                                                                                         | On your own                                |      Reflect and relax                                                  |
 | 6:30        | Dinner (out of town guests)                                                                                                                                                                        | Near the hotel.                            | Social                                                                                                                                  |
 
 ## Friday, June 5
@@ -45,5 +45,5 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 11:00       | What archivists need to know to provide reference services today: developing shared recommendations |                                            | Participatory discussions with activities.                                                          |
 | 12:30       | Lunch                                                                                               | Provided                                   | Social. Optional opportunities to review work on display from morning discussions, and add to them. |
 | 1:30-3:00pm | Wrap up: Develop a draft resource together, identify next steps                                     |                                            | Participatory discussions with activities.      |
-| 3:00-4:00pm | Optional Tour of the Bentley Historical Library | Reflect and Rejuvenate | | 
-| 4:30pm | Wrap up | Shuttle from Bentley Historical Library to hotel | |
+| 3:00-4:00pm | Optional Tour of the Bentley Historical Library | Walk from Leinweber to Bentley | Reflect and Rejuvenate |
+| 4:30pm | Wrap up | Shuttle from Bentley Historical Library to hotel | Relax |
