@@ -13,7 +13,7 @@ all participants read or review the "pre-reads" in the hopes of
 developing a shared frame of reference for discussing archival reference and generative AI.
 Below, we are providing additional resources for those looking for more information,
 such as overviews of LLM-based, generative AI tools, and other items that may be of
-interest.<!-- more -->
+interest.<!--more-->
 
 ## Pre-Reads
 
