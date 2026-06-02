@@ -9,7 +9,7 @@ author: # insert author name
 
 {{< figure src="images/leinweber-stairs-cropped.png" alt="Picture of people sitting on an outdoor staircase on the University of Michigan North campus" >}}
 
-June is a beautiful time in Ann Arbor, so if you have a chance to get out to see the campus, or just a walk around, there's many things to do.<!-- more --> A few seasonal recommendations:
+June is a beautiful time in Ann Arbor, so if you have a chance to get out to see the campus, or just a walk around, there's many things to do.<!--more--> A few seasonal recommendations:
 
 - The wonderful [Upjohn Peony Garden at the Nichols Arboretum](https://mbgna.umich.edu/peony-garden) declared peak bloom May 30, but there will likely be many blooms throughout the week! And in general, “the Arb” around the garden has many beautiful spots, and walking trails.
 - We realize many people will be heading home on Friday, but if you’re staying and looking for things to do, we’ll organize a “no host” happy hour on Friday evening near the hotel (probably at The Earle or Grizzly Peak)
