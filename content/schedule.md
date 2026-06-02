@@ -31,7 +31,7 @@ The agenda will be influenced heavily by participants' contributions and the the
 | 3:30        | Wrap up and prep for tomorrow                                                                                                                                                 |                                            | Participatory discussions with activities.                                                                                              |
 | 4:30 | Wrap Up | Shuttle to hotel leaves Leinweber Building at 4:30 | |
 | 4:30 - 6:30 | Break                                                                                                                                                                         | On your own                                |      Reflect and relax                                                  |
-| 6:30        | Dinner (out of town guests)                                                                                                                                                                        | Near the hotel.                            | Social                                                                                                                                  |
+| 6:30        | Dinner (RSVP requested)                                                                                                                                                                        | Near the hotel.                            | Social                                                                                                                                  |
 
 ## Friday, June 5
 
