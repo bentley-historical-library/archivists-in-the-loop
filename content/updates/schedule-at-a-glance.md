@@ -15,10 +15,10 @@ take place at the Dow Event Space at the School of Information (see more details
 
 ### Thursday, June 4
 
-We will begin at 9:00 a.m. with an ice breaker and opening remarks to frame the conversations.
+We will begin at 9:15 a.m. with an ice breaker and opening remarks to frame the conversations.
 Lunch and coffee will be provided for symposium participants.
 
-Structured workshop activities will take place all day until 4:30, with a short wrap-up at 5:00 p.m.
+Structured workshop activities will wrap up at about 4:15.
 
 An informal discussion, networking, and reflection dinnner will follow in the evening.
 Please note that the dinner will likely be held at a local restaurant (not on campus).
@@ -28,7 +28,7 @@ Please note that the dinner will likely be held at a local restaurant (not on ca
 We will begin at 9:00 a.m. with discussions shaped in response to the first day of the symposium.
 Lunch and coffee will be provided for symposium participants.
 
-We plan to conclude the formal symposium at around 2:30, to allow
+We plan to conclude the formal symposium at around 3:00, to allow
 those who desire to return home the chance to do so.
 For those who would like to stay in Ann Arbor on Friday,
 we will provide some activity suggestions and
