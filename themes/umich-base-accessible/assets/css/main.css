@@ -47,8 +47,8 @@
   --color-footer-text:       #FFFFFF;
 
   /* Hero feature */
-  --color-hero-bg:           #FFFFFF;
-  --color-hero-title:        var(--color-um-blue);
+  --color-hero-bg:           var(--color-arboretum-blue);
+  --color-hero-title:        var(--color-um-maize);
 
   /* ------------------------------------------------------------
      2. TYPOGRAPHY TOKENS
