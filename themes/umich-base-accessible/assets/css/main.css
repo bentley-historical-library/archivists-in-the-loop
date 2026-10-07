@@ -47,7 +47,7 @@
   --color-footer-text:       #FFFFFF;
 
   /* Hero feature */
-  --color-hero-bg:           var(--color-rackham-green);
+  --color-hero-bg:           #FFFFFF; /*was var(--color-rackham-green);*/
   --color-hero-title:        var(--color-um-maize);
 
   /* ------------------------------------------------------------
