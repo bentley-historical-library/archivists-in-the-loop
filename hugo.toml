@@ -4,9 +4,19 @@
 # ============================================================
 
 baseURL = "https://bentley-historical-library.github.io/archivists-in-the-loop/"
-languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Archivists in the Loop"
 theme = "umich-base-accessible"
+
+# languge keys
+[languages]
+  [languages.en]
+    direction = ""
+    disabled = false
+    label = ""
+    locale = ""
+    title = ""
+    weight = 0
 
 # Paginate list pages
 paginate = 10
