@@ -11,11 +11,10 @@ theme = "umich-base-accessible"
 # languge keys
 [languages]
   [languages.en]
-    direction = ""
+    direction = "ltr"
     disabled = false
-    label = ""
-    locale = ""
-    title = ""
+    label = "English"
+    locale = "en-US"
     weight = 0
 
 # Paginate list pages
