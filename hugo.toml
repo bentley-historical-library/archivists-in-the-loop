@@ -25,7 +25,7 @@ uglyURLs = false
 relativeURLs = false
 
 [params]
-  description = "Archivists in the Loop: project site for the June 2026 symposium on archival reference services in the generative AI moment, with the symposium report and information on follow-on work"
+  description = "Archivists in the Loop represents an ongoing project focused on researching archival reference services in the generative AI moment. The site originally shared information about the 2026 symposium, but now contains project reports and information on subsequent work."
 
   # Social site preview logo (place file in static/ and do not precede with a slash)
   ogImage = "images/basic-ai-symposium-graphic.png"
