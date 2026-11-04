@@ -1,0 +1,21 @@
+{{/*
+  report-callout shortcode
+  Renders a callout whose summary is pulled from a report page's front matter (description).
+  Usage: {{< report-callout path="reports/archivists-in-the-loop-report" color="teal" >}}
+  Parameters:
+    path   — content path of the report page (default: the first report in the reports section)
+    color  — "maize", "teal" (default), "blue", "red"
+*/}}
+{{ $color := .Get "color" | default "teal" }}
+{{ $page := false }}
+{{ with .Get "path" }}{{ $page = site.GetPage . }}{{ else }}{{ with (where site.RegularPages "Section" "reports").ByDate.Reverse }}{{ $page = index . 0 }}{{ end }}{{ end }}
+<div class="shortcode-callout shortcode-callout--{{ $color }}">
+  {{ if $page }}
+    <p class="shortcode-callout__title">Report: {{ $page.Title }}</p>
+    {{ with $page.Description }}<p>{{ . | markdownify }}</p>{{ end }}
+    <p><a href="{{ $page.RelPermalink }}">Read about the report</a>{{ with $page.Params.reportPDF }} · <a href="{{ . | relURL }}">Download the PDF</a>{{ end }}</p>
+  {{ else }}
+    <p class="shortcode-callout__title">Report</p>
+    <p>The symposium report will be available here soon.</p>
+  {{ end }}
+</div>
