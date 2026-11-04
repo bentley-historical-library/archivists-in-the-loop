@@ -17,6 +17,7 @@ When working in this repository:
 - Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
   front matter, and accessibility practices) rather than introducing new patterns.
 - Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
+- Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!
 
 ---
 
