@@ -11,6 +11,10 @@ license: '' # e.g. CC BY 4.0
 reportPDF: '' # e.g. /documents/my-report.pdf (file goes in static/documents/)
 pdfSize: '' # e.g. 2.4 MB
 citation: '' # suggested citation text
+coverImage: '' # path to image file in /images/
+coverAlt: '' # alt text, defaults to Cover of title
 ---
 
 Optional longer description, key findings, or acknowledgments go here.
+
+Hurrah!
