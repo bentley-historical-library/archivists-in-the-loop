@@ -889,3 +889,10 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .text-small  { font-size: var(--font-size-sm); }
 .mt-lg       { margin-top: var(--spacing-lg); }
 .mb-lg       { margin-bottom: var(--spacing-lg); }
+
+/* Reports */
+.report-summary { font-size: var(--font-size-lg, 1.125rem); }
+.report-meta { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1.5rem; margin: 1.5rem 0; }
+.report-meta dt { font-weight: 700; }
+.report-meta dd { margin: 0; }
+.post-card__authors { margin: 0; color: var(--color-text-light); }

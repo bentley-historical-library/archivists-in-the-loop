@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{- $doi := .Params.doi -}}
+{{- $doiURL := "" -}}
+{{- if $doi }}{{ $doiURL = printf "https://doi.org/%s" (strings.TrimPrefix "https://doi.org/" $doi) }}{{ end -}}
+{{- $pdf := .Params.reportPDF -}}
+<article id="post-{{ .File.UniqueID }}" class="entry report">
+
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="entry-content">
+    {{ with .Description }}<p class="report-summary">{{ . }}</p>{{ end }}
+
+    {{ with $pdf }}
+    <p>
+      <a class="button button--primary" href="{{ . | relURL }}" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
+    </p>
+    {{ end }}
+
+    <dl class="report-meta">
+      {{ if not .Date.IsZero }}<dt>Issue date</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
+      {{ with .Params.authors }}<dt>Authors</dt><dd>{{ delimit . "; " }}</dd>{{ end }}
+      {{ with .Params.publisher }}<dt>Publisher</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
+      {{ with .Params.license }}<dt>License</dt><dd>{{ . }}</dd>{{ end }}
+    </dl>
+
+    {{ .Content }}
+
+    {{ with .Params.citation }}
+    <h2>Suggested citation</h2>
+    <p class="report-citation">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{/* schema.org Report as JSON-LD (lightest approach: one script block, no markup changes) */}}
+  {{- $ld := dict "@context" "https://schema.org" "@type" "Report" "name" .Title "url" .Permalink -}}
+  {{- with .Description }}{{ $ld = merge $ld (dict "description" .) }}{{ end -}}
+  {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
+  {{- with .Params.authors }}
+    {{- $people := slice -}}
+    {{- range . }}{{ $people = $people | append (dict "@type" "Person" "name" .) }}{{ end -}}
+    {{- $ld = merge $ld (dict "author" $people) -}}
+  {{- end -}}
+  {{- with .Params.publisher }}{{ $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) }}{{ end -}}
+  {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" . "sameAs" .) }}{{ end -}}
+  {{- with .Params.license }}{{ $ld = merge $ld (dict "license" .) }}{{ end -}}
+  {{- with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (. | absURL) "encodingFormat" "application/pdf")) }}{{ end -}}
+  <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
+
+</article>
+{{ end }}
