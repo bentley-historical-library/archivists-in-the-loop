@@ -2,7 +2,7 @@
 {{- $desc  := cond (ne .Description "") .Description .Site.Params.description -}}
 {{- $url   := .Permalink -}}
 {{- $img   := "" -}}
-{{- with .Params.image }}{{- $img = absURL . -}}{{- else -}}
+{{- with .Params.image }}{{- $img = absURL . -}}{{- else with .Params.coverImage }}{{- $img = strings.TrimPrefix "/" . | absURL -}}{{- else -}}
   {{- with .Site.Params.ogImage }}{{- $img = absURL . -}}{{- end -}}
 {{- end -}}
 

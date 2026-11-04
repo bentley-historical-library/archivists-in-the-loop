@@ -9,6 +9,7 @@
   <div class="posts-list">
     {{ range .Pages.ByDate.Reverse }}
       <article class="post-card">
+        {{ with .Params.coverImage }}<img class="post-card__cover" src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}
         <h2 class="post-card__title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>

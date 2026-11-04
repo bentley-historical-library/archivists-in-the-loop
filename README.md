@@ -237,6 +237,8 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | License name, e.g. `CC BY 4.0` |
 | `reportPDF` | Path to the PDF, e.g. `/documents/my-report.pdf`; adds a download button |
+| `coverImage` | Optional cover graphic (jpg/png) in `static/images/`, e.g. `/images/my-report-cover.png`; shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
+| `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
 | `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |
 | `citation` | Suggested citation text |
 

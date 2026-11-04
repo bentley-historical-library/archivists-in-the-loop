@@ -896,3 +896,8 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .report-meta dt { font-weight: 700; }
 .report-meta dd { margin: 0; }
 .post-card__authors { margin: 0; color: var(--color-text-light); }
+.report-top { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+.report-top__text { flex: 1 1 20rem; min-width: 0; }
+.report-cover { flex: 0 0 auto; margin: 0; max-width: 14rem; }
+.report-cover img { display: block; width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.post-card__cover { float: right; max-width: 6rem; height: auto; margin: 0 0 0.5rem 1rem; }
