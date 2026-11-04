@@ -25,7 +25,7 @@ uglyURLs = false
 relativeURLs = false
 
 [params]
-  description = "Archivists in the Loop: A symposium on archival reference services in the generative AI moment"
+  description = "Archivists in the Loop: project site for the June 2026 symposium on archival reference services in the generative AI moment, with the symposium report and information on follow-on work"
 
   # Social site preview logo (place file in static/ and do not precede with a slash)
   ogImage = "images/basic-ai-symposium-graphic.png"
@@ -38,7 +38,7 @@ relativeURLs = false
   # footerLogo = "/images/site-logo-footer.png"
 
   # Text or HTML shown in the footer above the copyright line
-  footerText = "Archivists in the Loop is sponsored by the Bentley Historical Library and the University of Michigan School of Information"
+  footerText = "Archivists in the Loop was sponsored by the Bentley Historical Library and the University of Michigan School of Information"
   copyrightHolder = "Regents of the University of Michigan"
 
   # Favicon (place file in static/)
