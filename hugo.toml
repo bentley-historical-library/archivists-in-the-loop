@@ -101,6 +101,10 @@ relativeURLs = false
     url        = "/schedule/"
     weight     = 30
   [[menu.main]]
+    name       = "Reports"
+    url        = "/reports/"
+    weight     = 35
+  [[menu.main]]
     name       = "Updates"
     url        = "/updates/"
     weight     = 40

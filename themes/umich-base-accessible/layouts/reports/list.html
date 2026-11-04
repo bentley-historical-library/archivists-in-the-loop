@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="archive">
+
+  <header class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Description }}<div class="archive-description">{{ . | markdownify }}</div>{{ end }}
+  </header>
+
+  <div class="posts-list">
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="post-card">
+        <h2 class="post-card__title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        {{ if not .Date.IsZero }}
+          <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+        {{ with .Params.authors }}<p class="post-card__authors">{{ delimit . ", " }}</p>{{ end }}
+        {{ with .Description }}<p class="post-card__summary">{{ . }}</p>{{ end }}
+        <a href="{{ .RelPermalink }}" class="post-card__link">View report</a>
+      </article>
+    {{ else }}
+      <p>No reports yet.</p>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
