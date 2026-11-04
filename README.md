@@ -2,15 +2,15 @@
 
 ## The Project
 
-_Note for Coding Assistants_
-
 This repository is the website for **Archivists in the Loop**, an in-person symposium held in
 June 2026, sponsored by the Bentley Historical Library and the University of Michigan School of Information. The site was originally built to support planning of that event, and it contains
 information about the event itself, its schedule, participants, and planning materials. It is now
 also being adapted to host the **project report** that documents the event and its outcomes.
 Similar follow-on initiatives may be created in future and posted to this same site.
 
-Notes for Coding Assistants and Agents When working in this repository (How to Work in this Project) :
+### Notes for Coding Assistants (How to Work in this Project)
+
+When working in this repository:
 
 - Treat existing event and planning content, dated from early in 2026 until June 2026, as a record of a completed event. Do not rewrite, remove, or change the tense of it unless asked.
 - Expect new content (report sections, follow-on project pages) to be added alongside the existing content; if new content suggests a need for a new page archetype or structure, this may be suggested, but for the most part maintain structure, navigation, and URLs so the site remains usable, flexible, and do not break existing links.
