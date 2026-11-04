@@ -38,7 +38,7 @@ relativeURLs = false
   # footerLogo = "/images/site-logo-footer.png"
 
   # Text or HTML shown in the footer above the copyright line
-  footerText = "Archivists in the Loop was sponsored by the Bentley Historical Library and the University of Michigan School of Information"
+  footerText = "Archivists in the Loop has been sponsored by the Bentley Historical Library and the University of Michigan School of Information"
   copyrightHolder = "Regents of the University of Michigan"
 
   # Favicon (place file in static/)

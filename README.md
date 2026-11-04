@@ -35,9 +35,10 @@ may require further attention in future.
 2. [Getting Started](#getting-started)
 3. [Configuration](#configuration)
 4. [Creating Content](#creating-content)
-5. [Shortcodes](#shortcodes)
-6. [Color Palette](#color-palette)
-7. [Homepage Image Carousel](#homepage-image-carousel)
+5. [Reports](#reports)
+6. [Shortcodes](#shortcodes)
+7. [Color Palette](#color-palette)
+8. [Homepage Image Carousel](#homepage-image-carousel)
 
 ---
 
@@ -46,10 +47,12 @@ may require further attention in future.
 ```text
 archivists-in-the-loop/
 ├── hugo.toml                       Site configuration (title, menu, params)
-├── archetypes/                     Theme templates for updates or other content types (Markdown files)
+├── archetypes/                     Templates for new content (updates.md, reports.md)
 ├── content/                        Your pages and posts (Markdown files)
+│   └── reports/                    Reports section: _index.md plus one Markdown file per report
 ├── data/                           Files for data to power dynamic pages (JSON files)
 ├── static/                         Static assets (images, favicon, etc.)
+│   └── documents/                  Report PDFs
 └── themes/umich-base-accessible/
     ├── theme.toml                  Theme metadata
     ├── assets/css/main.css         All styles; UM colors defined as CSS variables
@@ -59,6 +62,9 @@ archivists-in-the-loop/
         |   ├── header.html         Sticky site header with logo and navigation
         |   └── footer.html         Site footer with optional logo, menu, and text
         ├── _shortcodes/        Reusable content components
+        ├── reports/            Templates for the reports section
+        |   ├── list.html           Reports index (date, authors, summary)
+        |   └── single.html         Report page (metadata, PDF button, schema.org JSON-LD)
         ├── baseof.html         Base HTML wrapper (html, head, body)
         ├── home.html           Homepage template (optional hero + content)
         ├── single.html         Template for individual pages and posts
@@ -203,6 +209,50 @@ Or use the `figure` shortcode for a captioned image (see below). Avoid bare Mark
 
 ---
 
+## Reports
+
+Reports (white papers, project reports) live in `content/reports/`, listed at `/reports/` and linked from the main menu. The section is meant to hold the symposium report and any later reports from follow-on initiatives.
+
+### Add a new report
+
+1. Put the PDF in `static/documents/` (e.g. `static/documents/my-report.pdf`).
+2. Create the page from the archetype:
+
+   ```bash
+   hugo new content/reports/my-report.md
+   ```
+
+3. Fill in the front matter (below) and optionally add a longer description, key findings, or acknowledgments in the page body.
+4. Set `draft: false` to publish. While `draft: true`, the report only appears with `hugo server -D`.
+
+### Report front matter fields
+
+| Field | Description |
+| --- | --- |
+| `title` | Report title |
+| `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
+| `date` | Issue date |
+| `authors` | List of author names, one per line |
+| `publisher` | Publishing organization |
+| `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
+| `license` | License name, e.g. `CC BY 4.0` |
+| `reportPDF` | Path to the PDF, e.g. `/documents/my-report.pdf`; adds a download button |
+| `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |
+| `citation` | Suggested citation text |
+
+Empty fields are simply not displayed.
+
+### Structured metadata
+
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, description, date, authors, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
+
+### Homepage button and callout
+
+- The homepage "Read the report" button is set in `hugo.toml` under `[params.hero.cta]`. Update its `url` when pointing to a different report.
+- The [`report-callout`](#report-callout) shortcode on `content/_index.md` pulls its summary from a report's `description`.
+
+---
+
 ## Shortcodes
 
 Shortcodes are reusable components you can drop into any Markdown page. Call them with `{{</* shortcode-name */>}}` syntax.
@@ -317,6 +367,27 @@ Some text for the right side.
 ```
 
 You can use full Markdown inside each column, including lists, links, and other shortcodes.
+
+---
+
+### `report-callout`
+
+A callout that pulls the title, summary (`description`), report page link, and PDF link from a report's front matter, so the text is maintained in one place. If no report is found (for example, it is still a draft), it shows a "coming soon" message.
+
+**Parameters:**
+
+| Parameter | Default | Options |
+| --- | --- | --- |
+| `path` | newest report | Content path of a report, e.g. `reports/my-report` |
+| `color` | `teal` | `maize`, `teal`, `blue`, `red` |
+
+**Usage:**
+
+```hugo
+{{</* report-callout */>}}
+
+{{</* report-callout path="reports/my-report" color="blue" */>}}
+```
 
 ---
 
