@@ -17,6 +17,9 @@ When working in this repository:
 - Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
   front matter, and accessibility practices) rather than introducing new patterns.
 - Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
+- Git workflow: make changes on a new feature branch, never directly on `main` (pushes to `main` deploy the site). Commit step by step as work progresses, with a clear message for each logical change. Stage only the files you changed (check `git status` first) so the maintainer's unrelated or already-staged edits are not swept into your commits. Do not push or merge unless asked.
+- Report metadata (authors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
+- Make only the edits requested. When asked to change tense or make another specific writing modification, do only that: do not rewrite, reword, fix, or change anything else unless specifically asked. If you notice other issues (typos, outdated statements), mention them rather than changing them.
 - Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!
 
 ---
