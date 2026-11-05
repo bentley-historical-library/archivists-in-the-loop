@@ -55,7 +55,7 @@ relativeURLs = false
     heroImage  = "images/basic-ai-symposium-graphic.png"
     [params.hero.cta]
       label = "Read the report"
-      url   = "/reports/archivists-in-the-loop-report/"
+      url   = "reports/archivists-in-the-loop-report/"
 
   # Featured image carousel on the homepage.
   # Add one [[params.carousel.slides]] entry per image.
