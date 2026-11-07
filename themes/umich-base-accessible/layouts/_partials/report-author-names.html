@@ -1,0 +1,7 @@
+{{- /* Returns a slice of author names from a report's `authors` front matter.
+       Each author may be a map ({name, orcid}) or a plain string (legacy). */ -}}
+{{- $names := slice -}}
+{{- range . -}}
+  {{- if reflect.IsMap . }}{{ $names = $names | append .name }}{{ else }}{{ $names = $names | append . }}{{ end -}}
+{{- end -}}
+{{- return $names -}}

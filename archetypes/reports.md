@@ -5,7 +5,8 @@ date: '{{ .Date }}' # issue date
 draft: true
 report_title: '' # full formal title of the report (may differ from the short page title); shown under the page heading and used as the JSON-LD headline
 authors:
-  - '' # one name per line
+  - name: '' # one author per entry
+    orcid: '' # optional. Numbers only, e.g. 0000-0002-1825-0097 (no https://orcid.org/ prefix; the URL is added automatically)
 publisher: 'University of Michigan'
 doi: '' # e.g. 10.xxxx/xxxxx
 license: '' # e.g. CC BY 4.0

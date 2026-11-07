@@ -36,7 +36,7 @@
 
     <dl class="report-meta">
       {{ if not .Date.IsZero }}<dt>Issued</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
-      {{ with .Params.authors }}<dt>Author(s)</dt><dd>{{ delimit . "; " }}</dd>{{ end }}
+      {{ with .Params.authors }}<dt>Author(s)</dt><dd>{{ delimit (partial "report-author-names.html" .) "; " }}</dd>{{ end }}
       {{ with .Params.publisher }}<dt>Published by</dt><dd>{{ . }}</dd>{{ end }}
       {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
       {{ with .Params.license }}<dt>License</dt><dd>{{ . }}</dd>{{ end }}
@@ -59,7 +59,16 @@
   {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
   {{- with .Params.authors }}
     {{- $people := slice -}}
-    {{- range . }}{{ $people = $people | append (dict "@type" "Person" "name" .) }}{{ end -}}
+    {{- range . }}
+      {{- $person := dict "@type" "Person" -}}
+      {{- if reflect.IsMap . -}}
+        {{- $person = merge $person (dict "name" .name) -}}
+        {{- with .orcid }}{{ $person = merge $person (dict "identifier" (printf "https://orcid.org/%s" (strings.TrimPrefix "https://orcid.org/" .))) }}{{ end -}}
+      {{- else -}}
+        {{- $person = merge $person (dict "name" .) -}}
+      {{- end -}}
+      {{- $people = $people | append $person -}}
+    {{- end -}}
     {{- $ld = merge $ld (dict "author" $people) -}}
   {{- end -}}
   {{- with .Params.publisher }}{{ $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) }}{{ end -}}

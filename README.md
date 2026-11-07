@@ -226,7 +226,7 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading, in the Reports list, and used as the JSON-LD `headline` |
 | `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
 | `date` | Issue date |
-| `authors` | List of author names, one per line |
+| `authors` | List of authors; each entry has a `name` and an optional `orcid`. Enter the ORCID iD as numbers only, e.g. `0000-0002-1825-0097`; do not include `https://orcid.org/` (the URL is added automatically). When present, it is output as the author's `identifier` URL in the JSON-LD. Plain-string entries (just a name) still work |
 | `publisher` | Publishing organization |
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | License name, e.g. `CC BY 4.0` |
@@ -240,7 +240,7 @@ Empty fields are simply not displayed.
 
 ### Structured metadata
 
-Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, headline from `report_title`, abstract from `description`, date, authors, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, headline from `report_title`, abstract from `description`, date, authors with ORCID identifiers, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
 
 ### Homepage button and callout
 

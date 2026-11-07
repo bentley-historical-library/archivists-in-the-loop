@@ -5,9 +5,12 @@ date: '2026-11-07'
 draft: true
 report_title: 'Archivists in the Loop: Archival Reference Practices and Artificial Intelligence'
 authors:
-  - 'Meghan Courtney' # one name per line
-  - 'Jess Farrell'
-  - 'Jesse A. Johnston'
+  - name: 'Meghan Courtney' # one author per entry
+    orcid: '0009-0003-0398-4746' # optional. Numbers only, e.g. 0000-0002-1825-0097 (the URL is added automatically)
+  - name: 'Jess Farrell'
+    orcid: '0000-0001-9794-6908'
+  - name: 'Jesse A. Johnston'
+    orcid: '0000-0003-2617-0166'
 publisher: 'University of Michigan, Bentley Historical Library and School of Information'
 doi: '10.5281/zenodo.24017299'
 license: 'CC BY NC SA 4.0'
