@@ -9,7 +9,7 @@ publisher: 'University of Michigan'
 doi: '' # e.g. 10.xxxx/xxxxx
 license: '' # e.g. CC BY 4.0
 reportPDF: '' # e.g. /documents/my-report.pdf (file goes in static/documents/)
-coverImage: '' # optional cover graphic (jpg/png), e.g. /images/my-report-cover.png
+coverImage: '' # optional cover graphic (jpg/png). Filename ONLY, e.g. my-report-cover.png. The file MUST be in assets/images/ (NOT static/images/); the build fails if it isn't found there.
 coverAlt: '' # alt text for the cover; defaults to "Cover of <title>"
 pdfSize: '' # e.g. 2.4 MB
 citation: '' # suggested citation text
