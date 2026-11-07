@@ -8,22 +8,9 @@ information about the event itself, its schedule, participants, and planning mat
 also being adapted to host the **project report** that documents the event and its outcomes.
 Similar follow-on initiatives may be created in future and posted to this same site.
 
-### Notes for Coding Assistants (How to Work in this Project)
-
-When working in this repository:
-
-- Treat existing event and planning content, dated from early in 2026 until June 2026, as a record of a completed event. Do not rewrite, remove, or change the tense of it unless asked.
-- Expect new content (report sections, follow-on project pages) to be added alongside the existing content; if new content suggests a need for a new page archetype or structure, this may be suggested, but for the most part maintain structure, navigation, and URLs so the site remains usable, flexible, and do not break existing links.
-- Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
-  front matter, and accessibility practices) rather than introducing new patterns.
-- Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
-- Git workflow: make changes on a new feature branch, never directly on `main` (pushes to `main` deploy the site). Commit step by step as work progresses, with a clear message for each logical change. Stage only the files you changed (check `git status` first) so the maintainer's unrelated or already-staged edits are not swept into your commits. Do not push or merge unless asked.
-- Report metadata (authors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
-- Make only the edits requested. When asked to change tense or make another specific writing modification, do only that: do not rewrite, reword, fix, or change anything else unless specifically asked. If you notice other issues (typos, outdated statements), mention them rather than changing them.
-- CSS and layout alignment: when changing layout CSS, check that left edges still line up with the header's `.site-header__inner` pattern: no padding on the outer container, `max-width: var(--max-width-wide)` centered, then `padding-left: var(--site-padding)` inside. Default content width is `--max-width-default` (700px) and wide is `--max-width-wide` (1240px); `fullWidth: true` pages follow the same pattern so content aligns with the site name and nav at all viewport widths.
-- Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!
-
 ---
+
+## Theme
 
 This repo publishes a site powered by the Hugo static site framework. The theme, called **umich-base-accessible**,
 was styled with some inspiration from [digitalscholarship.umich.edu](https://digitalscholarship.umich.edu)
@@ -481,3 +468,18 @@ For example, to set the footer to Michigan Blue with Maize text:
 ```
 
 No other changes are needed — all header and footer styles reference these variables.
+
+### Notes for Coding Assistants (How to Work in this Project)
+
+When working in this repository:
+
+- Treat existing event and planning content, dated from early in 2026 until June 2026, as a record of a completed event. Do not rewrite, remove, or change the tense of it unless asked.
+- Expect new content (report sections, follow-on project pages) to be added alongside the existing content; if new content suggests a need for a new page archetype or structure, this may be suggested, but for the most part maintain structure, navigation, and URLs so the site remains usable, flexible, and do not break existing links.
+- Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
+  front matter, and accessibility practices) rather than introducing new patterns.
+- Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
+- Git workflow: make changes on a new feature branch, never directly on `main` (pushes to `main` deploy the site). Commit step by step as work progresses, with a clear message for each logical change. Stage only the files you changed (check `git status` first) so the maintainer's unrelated or already-staged edits are not swept into your commits. Do not push or merge unless asked.
+- Report metadata (authors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
+- Make only the edits requested. When asked to change tense or make another specific writing modification, do only that: do not rewrite, reword, fix, or change anything else unless specifically asked. If you notice other issues (typos, outdated statements), mention them rather than changing them.
+- CSS and layout alignment: when changing layout CSS, check that left edges still line up with the header's `.site-header__inner` pattern: no padding on the outer container, `max-width: var(--max-width-wide)` centered, then `padding-left: var(--site-padding)` inside. Default content width is `--max-width-default` (700px) and wide is `--max-width-wide` (1240px); `fullWidth: true` pages follow the same pattern so content aligns with the site name and nav at all viewport widths.
+- Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!
