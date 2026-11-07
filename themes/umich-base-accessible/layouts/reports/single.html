@@ -2,7 +2,9 @@
 {{- $doi := .Params.doi -}}
 {{- $doiURL := "" -}}
 {{- if $doi }}{{ $doiURL = printf "https://doi.org/%s" (strings.TrimPrefix "https://doi.org/" $doi) }}{{ end -}}
-{{- $pdf := .Params.reportPDF -}}
+{{- /* reportPDF is a filename in static/documents/ */ -}}
+{{- $pdf := "" -}}
+{{- with .Params.reportPDF }}{{ $pdf = path.Join "documents" (path.Base .) }}{{ end -}}
 {{- $license := "" -}}
 {{- with .Params.license }}{{ $license = partial "report-license.html" . }}{{ end -}}
 {{- $cover := "" -}}
@@ -26,7 +28,10 @@
     {{ end }}
     <div class="report-top__text">
     {{ with .Description }}<p class="report-summary">{{ . }}</p>{{ end }}
+    </div>
+    </div>
 
+    <div class="report-details">
     {{ with $pdf }}
     <p>
       <a class="button button--primary" href="{{ . | relURL }}" type="application/pdf" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
@@ -44,7 +49,6 @@
       {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
       {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
     </dl>
-    </div>
     </div>
 
     {{ .Content }}

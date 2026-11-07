@@ -13,7 +13,7 @@
   {{ if $page }}
     <p class="shortcode-callout__title">Report: {{ $page.Title }}</p>
     {{ with $page.Description }}<p>{{ . | markdownify }}</p>{{ end }}
-    <p><a href="{{ $page.RelPermalink }}">Read about the report</a>{{ with $page.Params.reportPDF }} · <a href="{{ . | relURL }}">Download the PDF</a>{{ end }}</p>
+    <p><a href="{{ $page.RelPermalink }}">Read about the report</a>{{ with $page.Params.reportPDF }} · <a href="{{ path.Join "documents" (path.Base .) | relURL }}">Download the PDF</a>{{ end }}</p>
   {{ else }}
     <p class="shortcode-callout__title">Report</p>
     <p>The symposium report will be available here soon.</p>

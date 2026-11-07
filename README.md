@@ -236,7 +236,7 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | `publisher` | Publishing organization |
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | Creative Commons license written as `CC-<terms>-<version>` with hyphens and no spaces, e.g. `CC-BY-NC-SA-4.0` (also `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC-BY-ND-4.0`, `CC-BY-NC-ND-4.0`, and `CC0-1.0`). It is displayed as `CC BY NC SA 4.0`, linked to the matching creativecommons.org page (here `https://creativecommons.org/licenses/by-nc-sa/4.0/`, built automatically), and the URL is output as the JSON-LD `license`. Any other text is shown as-is, with no link |
-| `reportPDF` | Path to the PDF in `static/documents/`, written as `/documents/my-report.pdf`; adds a download button |
+| `reportPDF` | PDF filename only, e.g. `my-report.pdf`, not a path; the file must be in `static/documents/`. Adds a download button, a JSON-LD PDF link, and the PDF link in the `report-callout` |
 | `coverImage` | Optional cover graphic (jpg/png). Give the **filename only**, e.g. `my-report-cover.png`, not a path; the file must be in `assets/images/` (not `static/images/`) or the build fails. Shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
 | `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
 | `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |

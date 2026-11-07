@@ -284,7 +284,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 }
 .button--primary:hover, input[type="submit"]:hover {
   background: var(--color-um-blue);
-  color: #fff;
+  color: var(--color-um-maize);
   border-color: var(--color-um-blue);
 }
 
@@ -547,10 +547,10 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .entry-content > h3,
 .entry-content > h4 { margin-top: var(--spacing-lg); }
 
-.entry-content a {
+.entry-content a:not(.button) {
   color: var(--color-link);
 }
-.entry-content a:hover { color: var(--color-link-hover); }
+.entry-content a:not(.button):hover { color: var(--color-link-hover); }
 
 /* ------------------------------------------------------------
    11. POST CARDS (list pages)
@@ -898,5 +898,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .post-card__authors { margin: 0; color: var(--color-text-light); }
 .report-top { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
 .report-top__text { flex: 1 1 20rem; min-width: 0; }
+.report-details { margin-top: var(--spacing-md, 1.5rem); padding-top: var(--spacing-md, 1.5rem); border-top: 1px solid rgba(0,0,0,0.15); }
+.report-details > :first-child { margin-top: 0; }
 .report-cover { flex: 0 0 auto; margin: 0; max-width: 14rem; display: block; width: 100%; height: auto; border: 1px solid rgba(0,0,0,0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.post-card__cover { float: right; max-width: 6rem; height: auto; margin: 0 0 0.5rem 1rem; }
+.post-card__cover { display: block; width: 100%; height: auto; margin: 0 0 var(--spacing-xs); border: 1px solid rgba(0,0,0,0.15); }

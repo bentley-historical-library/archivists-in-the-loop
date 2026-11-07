@@ -13,7 +13,7 @@ editors:
 publisher: 'University of Michigan'
 doi: '' # e.g. 10.xxxx/xxxxx
 license: '' # Creative Commons license as CC-<terms>-<version>, hyphens, no spaces: CC-BY-4.0, CC-BY-SA-4.0, CC-BY-NC-4.0, CC-BY-NC-SA-4.0, CC-BY-ND-4.0, CC-BY-NC-ND-4.0, or CC0-1.0. Displays as 'CC BY NC SA 4.0', linked to the creativecommons.org license page (the URL is built automatically). Any other text is shown as-is, unlinked.
-reportPDF: '' # e.g. /documents/my-report.pdf (file goes in static/documents/)
+reportPDF: '' # filename only, e.g. my-report.pdf. The file MUST be in static/documents/
 coverImage: '' # optional cover graphic (jpg/png). Filename ONLY, e.g. my-report-cover.png. The file MUST be in assets/images/ (NOT static/images/); the build fails if it isn't found there.
 coverAlt: '' # alt text for the cover; defaults to "Cover of <title>"
 pdfSize: '' # e.g. 2.4 MB
