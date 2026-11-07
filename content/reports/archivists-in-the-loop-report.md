@@ -11,7 +11,13 @@ editors:
     orcid: '0000-0001-9794-6908'
   - name: 'Jesse A. Johnston'
     orcid: '0000-0003-2617-0166'
-publisher: 'University of Michigan, Bentley Historical Library and School of Information'
+publisher: # one publisher per entry; a plain string also works for a single publisher
+  - name: 'Bentley Historical Library'
+    type: 'ResearchOrganization' # optional schema.org type; defaults to Organization
+    url: 'https://bentley.umich.edu/'
+  - name: 'University of Michigan School of Information'
+    type: 'EducationalOrganization'
+    url: 'https://si.umich.edu/'
 doi: '10.5281/zenodo.24017299'
 license: 'CC-BY-NC-SA-4.0' # see archetype for format
 reportPDF: 'ArchivistsIntheLoopReport_V1.pdf' # filename only; file must be in static/documents/

@@ -10,7 +10,10 @@ authors: # use authors, editors, or both; delete any block you don't need
 editors:
   - name: '' # one editor per entry
     orcid: '' # optional. Numbers only, e.g. 0000-0002-1825-0097 (the URL is added automatically)
-publisher: 'University of Michigan'
+publisher: # list one publisher per entry; add more entries for additional publishers
+  - name: 'University of Michigan'
+    url: '' # optional. Publisher website; the name links to it, e.g. https://www.umich.edu/
+    type: '' # optional schema.org type for the JSON-LD: Library, EducationalOrganization, CollegeOrUniversity, etc. Defaults to Organization
 doi: '' # e.g. 10.xxxx/xxxxx
 license: '' # Creative Commons license as CC-<terms>-<version>, hyphens, no spaces: CC-BY-4.0, CC-BY-SA-4.0, CC-BY-NC-4.0, CC-BY-NC-SA-4.0, CC-BY-ND-4.0, CC-BY-NC-ND-4.0, or CC0-1.0. Displays as 'CC BY NC SA 4.0', linked to the creativecommons.org license page (the URL is built automatically). Any other text is shown as-is, unlinked.
 reportPDF: '' # filename only, e.g. my-report.pdf. The file MUST be in static/documents/

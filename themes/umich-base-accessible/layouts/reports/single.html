@@ -45,7 +45,7 @@
       {{ if not .Date.IsZero }}<dt>Issued</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
       {{ with partial "report-author-names.html" .Params.authors }}<dt>{{ cond (gt (len .) 1) "Authors" "Author" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with partial "report-author-names.html" .Params.editors }}<dt>{{ cond (gt (len .) 1) "Editors" "Editor" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
-      {{ with .Params.publisher }}<dt>Published by</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with partial "report-publisher-names.html" .Params.publisher }}<dt>{{ cond (gt (len .) 1) "Publishers" "Publisher" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
       {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
     </dl>
@@ -66,7 +66,7 @@
   {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
   {{- with partial "report-people-jsonld.html" .Params.authors }}{{ $ld = merge $ld (dict "author" .) }}{{ end -}}
   {{- with partial "report-people-jsonld.html" .Params.editors }}{{ $ld = merge $ld (dict "editor" .) }}{{ end -}}
-  {{- with .Params.publisher }}{{ $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) }}{{ end -}}
+  {{- with partial "report-publishers-jsonld.html" .Params.publisher }}{{ $ld = merge $ld (dict "publisher" .) }}{{ end -}}
   {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" (strings.TrimPrefix "https://doi.org/" $doi) "url" .) "sameAs" .) }}{{ end -}}
   {{- with $license }}{{ $ld = merge $ld (dict "license" (.url | default .label)) }}{{ end -}}
   {{- with $cover }}{{ $ld = merge $ld (dict "image" .Permalink) }}{{ end -}}

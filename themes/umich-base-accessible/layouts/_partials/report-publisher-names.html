@@ -1,0 +1,17 @@
+{{- /* Returns a slice of names (as safe HTML) from a report's `publisher` front matter.
+       Each entry may be a map ({name, url}) or a plain string. Entries with no name are skipped.
+       When a url is given, the name links to it. */ -}}
+{{- $names := slice -}}
+{{- range . -}}
+  {{- $name := "" -}}
+  {{- $url := "" -}}
+  {{- if reflect.IsMap . }}{{ $name = .name }}{{ $url = .url }}{{ else }}{{ $name = . }}{{ end -}}
+  {{- if $name -}}
+    {{- $html := $name | htmlEscape -}}
+    {{- with $url -}}
+      {{- $html = printf `<a href="%s">%s</a>` (. | htmlEscape) $html -}}
+    {{- end -}}
+    {{- $names = $names | append ($html | safeHTML) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $names -}}
