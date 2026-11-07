@@ -14,7 +14,7 @@ editors:
 publisher: 'University of Michigan, Bentley Historical Library and School of Information'
 doi: '10.5281/zenodo.24017299'
 license: 'CC-BY-NC-SA-4.0' # see archetype for format
-reportPDF: '' # e.g. /documents/my-report.pdf (file goes in static/documents/)
+reportPDF: 'ArchivistsIntheLoopReport_V1.pdf' # e.g. /documents/my-report.pdf (file goes in static/documents/)
 pdfSize: '677.3 KB' # e.g. 2.4 MB
 citation: 'Courtney, M., Farrell, J., & Johnston, J. A., et. al. (2026). Archivists in the Loop: Archival Reference Practices and Artificial Intelligence. DOI: https://doi.org/10.5281/zenodo.24017299.' # suggested citation text
 coverImage: 'archivists-in-the-loop-2026-report-cover.png' # filename only; file must be in assets/images/
