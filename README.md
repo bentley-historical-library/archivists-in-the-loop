@@ -42,9 +42,9 @@ archivists-in-the-loop/
 ├── content/                        Your pages and posts (Markdown files)
 │   └── reports/                    Reports section: _index.md plus one Markdown file per report
 ├── data/                           Files for data to power dynamic pages (JSON files)
-├── assets/                         Processed assets
-│   └── images/                     Report cover images (coverImage)
-├── static/                         Static assets (images, favicon, etc.)
+├── assets/                         Files Hugo processes via resources.Get
+│   └── images/                     Report cover images (coverImage field)
+├── static/                         Files copied as-is (images, favicon, etc.)
 │   └── documents/                  Report PDFs
 └── themes/umich-base-accessible/
     ├── theme.toml                  Theme metadata
@@ -52,6 +52,8 @@ archivists-in-the-loop/
     └── layouts/
         ├── _partials/          Reusable content components (see below)
         |   ├── head.html           <head> contents: fonts, stylesheet, meta tags
+        |   ├── opengraph.html      Link-preview (Open Graph) meta tags
+        |   ├── report-author-names.html  Report authors as names, linked to ORCID when provided
         |   ├── header.html         Sticky site header with logo and navigation
         |   └── footer.html         Site footer with optional logo, menu, and text
         ├── _shortcodes/        Reusable content components
@@ -209,29 +211,30 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 ### Add a new report
 
 1. Put the PDF in `static/documents/` (e.g. `static/documents/my-report.pdf`).
-2. Create the page from the archetype:
+2. If the report has a cover image, put it in **`assets/images/`** (e.g. `assets/images/my-report-cover.png`). It must be there, not in `static/images/`; the build fails if the file named in `coverImage` is not found in `assets/images/`.
+3. Create the page from the archetype:
 
    ```bash
    hugo new content/reports/my-report.md
    ```
 
-3. Fill in the front matter (below) and optionally add a longer description, key findings, or acknowledgments in the page body.
-4. Set `draft: false` to publish. While `draft: true`, the report only appears with `hugo server -D`.
+4. Fill in the front matter (below) and optionally add a longer description, key findings, or acknowledgments in the page body.
+5. Set `draft: false` to publish. While `draft: true`, the report only appears with `hugo server -D`.
 
 ### Report front matter fields
 
 | Field | Description |
 | --- | --- |
-| `title` | Report title |
-| `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading, in the Reports list, and used as the JSON-LD `headline` |
+| `title` | Short report title; used for the page heading, the Reports list, the browser tab, and the JSON-LD `name` |
+| `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading and under the title in the Reports list; used as the JSON-LD `headline`. Optional |
 | `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
 | `date` | Issue date |
-| `authors` | List of authors; each entry has a `name` and an optional `orcid`. Enter the ORCID iD as numbers only, e.g. `0000-0002-1825-0097`; do not include `https://orcid.org/` (the URL is added automatically). When present, it is output as the author's `identifier` URL in the JSON-LD. Plain-string entries (just a name) still work |
+| `authors` | List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the URL is output as the author's `identifier` in the JSON-LD. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
 | `publisher` | Publishing organization |
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | License name, e.g. `CC BY 4.0` |
-| `reportPDF` | Path to the PDF, e.g. `/documents/my-report.pdf`; adds a download button |
-| `coverImage` | Optional cover graphic (jpg/png). Give the filename only, e.g. `my-report-cover.png`; the file must be in `assets/images/` (not `static/images/`) or the build fails; shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
+| `reportPDF` | Path to the PDF in `static/documents/`, written as `/documents/my-report.pdf`; adds a download button |
+| `coverImage` | Optional cover graphic (jpg/png). Give the **filename only**, e.g. `my-report-cover.png`, not a path; the file must be in `assets/images/` (not `static/images/`) or the build fails. Shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
 | `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
 | `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |
 | `citation` | Suggested citation text |
@@ -240,7 +243,7 @@ Empty fields are simply not displayed.
 
 ### Structured metadata
 
-Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, headline from `report_title`, abstract from `description`, date, authors with ORCID identifiers, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `title`, headline from `report_title`, abstract from `description`, date, authors with ORCID identifiers, publisher, DOI, license, cover image, PDF link). No extra work is needed when adding a report.
 
 ### Homepage button and callout
 
