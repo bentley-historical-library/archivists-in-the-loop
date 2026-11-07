@@ -3,7 +3,7 @@ title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 description: '' # short summary; shown on the report page, the Reports list, and the home page callout
 date: '{{ .Date }}' # issue date
 draft: true
-report_title: '' # full formal title of the report (may differ from the short page title); shown under the page heading and used as the JSON-LD headline
+report_fulltitle: '' # optional full formal title (title is the short page title). Shown as "Full title" on the report page and in the Reports list; used as the JSON-LD name and headline, and in link previews
 authors: # use authors, editors, or both; delete any block you don't need
   - name: '' # one author per entry
     orcid: '' # optional. Numbers only, e.g. 0000-0002-1825-0097 (no https://orcid.org/ prefix; the URL is added automatically)

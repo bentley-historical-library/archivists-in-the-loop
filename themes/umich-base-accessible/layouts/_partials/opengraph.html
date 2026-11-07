@@ -1,4 +1,4 @@
-{{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
+{{- $title := cond .IsHome .Site.Title (printf "%s | %s" (.Params.report_fulltitle | default .Title) .Site.Title) -}}
 {{- $desc  := cond (ne .Description "") .Description .Site.Params.description -}}
 {{- $url   := .Permalink -}}
 {{- $img   := "" -}}

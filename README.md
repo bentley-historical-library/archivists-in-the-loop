@@ -227,12 +227,12 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 
 | Field | Description |
 | --- | --- |
-| `title` | Short report title; used for the page heading, the Reports list, the browser tab, and the JSON-LD `name` |
-| `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading and under the title in the Reports list; used as the JSON-LD `headline`. Optional |
+| `title` | Short report title; used for the page heading, the Reports list, and the browser tab (and the JSON-LD `name` if there is no `report_fulltitle`) |
+| `report_fulltitle` | Optional full formal title, when `title` is a shorter page title. Shown as "Full title" in the report details and under the title in the Reports list; used as the JSON-LD `name` and `headline` (the short `title` becomes `alternateName`), and as the link-preview title |
 | `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
 | `date` | Issue date |
-| `authors` | Optional (see `editors`). List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the URL is output as the author's `identifier` in the JSON-LD. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
-| `editors` | Optional. Same format as `authors` (`name` plus optional numbers-only `orcid`, linked the same way). Shown on the report page as "Editor(s)" after the authors, output as `editor` in the JSON-LD, and shown in the Reports list as "(eds.)" when a report has no authors. Use `authors`, `editors`, or both |
+| `authors` | Optional (see `editors`). List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the ORCID is output in the JSON-LD as the person's `identifier` (a `PropertyValue` with the URL) and `sameAs`. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
+| `editors` | Optional. Same format as `authors` (`name` plus optional numbers-only `orcid`, linked the same way). Shown on the report page as "Editor" or "Editors" (by count) after the authors, output as `editor` in the JSON-LD, and shown in the Reports list as "(eds.)" when a report has no authors. Use `authors`, `editors`, or both |
 | `publisher` | Publishing organization |
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | Creative Commons license written as `CC-<terms>-<version>` with hyphens and no spaces, e.g. `CC-BY-NC-SA-4.0` (also `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC-BY-ND-4.0`, `CC-BY-NC-ND-4.0`, and `CC0-1.0`). It is displayed as `CC BY NC SA 4.0`, linked to the matching creativecommons.org page (here `https://creativecommons.org/licenses/by-nc-sa/4.0/`, built automatically), and the URL is output as the JSON-LD `license`. Any other text is shown as-is, with no link |
@@ -246,7 +246,7 @@ Empty fields are simply not displayed.
 
 ### Structured metadata
 
-Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `title`, headline from `report_title`, abstract from `description`, date, authors and editors with ORCID identifiers, publisher, DOI, license (as the Creative Commons URL), cover image, PDF link). No extra work is needed when adding a report.
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `report_fulltitle` or `title`, headline from `report_fulltitle`, alternate name from `title`, abstract from `description`, date, authors and editors with ORCID identifiers, publisher, DOI (as a `PropertyValue` identifier plus `sameAs`), license (as the Creative Commons URL), cover image, PDF link). No extra work is needed when adding a report.
 
 ### Homepage button and callout
 

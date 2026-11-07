@@ -22,24 +22,24 @@
     <div class="report-top">
     {{/* coverImage is a filename in assets/images/ (a Hugo global resource), e.g. my-report-cover.png */}}
     {{ with $cover }}
-    <figure class="report-cover">
-      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.coverAlt | default (printf "Cover of %s" $.Title) }}">
-    </figure>
+    <img class="report-cover" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.coverAlt | default (printf "Cover of %s" $.Title) }}">
     {{ end }}
     <div class="report-top__text">
     {{ with .Description }}<p class="report-summary">{{ . }}</p>{{ end }}
 
     {{ with $pdf }}
     <p>
-      <a class="button button--primary" href="{{ . | relURL }}" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
+      <a class="button button--primary" href="{{ . | relURL }}" type="application/pdf" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
     </p>
     {{ end }}
 
+    <h2 class="entry-metadata">Report Information</h2>
+
     <dl class="report-meta">
-      {{ with .Params.report_title }}<dt>Title</dt><dd class="report-title">{{ . }}</dd>{{ end }}
+      {{ with .Params.report_fulltitle }}<dt>Full title</dt><dd class="report-fulltitle">{{ . }}</dd>{{ end }}
       {{ if not .Date.IsZero }}<dt>Issued</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
-      {{ with partial "report-author-names.html" .Params.authors }}<dt>Author(s)</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
-      {{ with partial "report-author-names.html" .Params.editors }}<dt>Editor(s)</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.authors }}<dt>{{ cond (gt (len .) 1) "Authors" "Author" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.editors }}<dt>{{ cond (gt (len .) 1) "Editors" "Editor" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with .Params.publisher }}<dt>Published by</dt><dd>{{ . }}</dd>{{ end }}
       {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
       {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
@@ -56,14 +56,14 @@
   </div>
 
   {{/* schema.org Report as JSON-LD */}}
-  {{- $ld := dict "@context" "https://schema.org" "@type" "Report" "name" .Title "url" .Permalink -}}
-  {{- with .Params.report_title }}{{ $ld = merge $ld (dict "headline" .) }}{{ end -}}
+  {{- $ld := dict "@context" "https://schema.org" "@type" "Report" "name" (.Params.report_fulltitle | default .Title) "url" .Permalink -}}
+  {{- with .Params.report_fulltitle }}{{ $ld = merge $ld (dict "headline" . "alternateName" $.Title) }}{{ end -}}
   {{- with .Description }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end -}}
   {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
   {{- with partial "report-people-jsonld.html" .Params.authors }}{{ $ld = merge $ld (dict "author" .) }}{{ end -}}
   {{- with partial "report-people-jsonld.html" .Params.editors }}{{ $ld = merge $ld (dict "editor" .) }}{{ end -}}
   {{- with .Params.publisher }}{{ $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) }}{{ end -}}
-  {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" . "sameAs" .) }}{{ end -}}
+  {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" (strings.TrimPrefix "https://doi.org/" $doi) "url" .) "sameAs" .) }}{{ end -}}
   {{- with $license }}{{ $ld = merge $ld (dict "license" (.url | default .label)) }}{{ end -}}
   {{- with $cover }}{{ $ld = merge $ld (dict "image" .Permalink) }}{{ end -}}
   {{- with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (strings.TrimPrefix "/" . | absURL) "encodingFormat" "application/pdf")) }}{{ end -}}
