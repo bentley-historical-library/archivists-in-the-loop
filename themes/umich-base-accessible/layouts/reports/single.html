@@ -14,6 +14,7 @@
 
   <header class="entry-header">
     <h1 class="entry-title">{{ .Title }}</h1>
+    {{ with .Params.report_title }}<p class="report-title">{{ . }}</p>{{ end }}
   </header>
 
   <div class="entry-content">
@@ -53,7 +54,8 @@
 
   {{/* schema.org Report as JSON-LD */}}
   {{- $ld := dict "@context" "https://schema.org" "@type" "Report" "name" .Title "url" .Permalink -}}
-  {{- with .Description }}{{ $ld = merge $ld (dict "description" .) }}{{ end -}}
+  {{- with .Params.report_title }}{{ $ld = merge $ld (dict "headline" .) }}{{ end -}}
+  {{- with .Description }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end -}}
   {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
   {{- with .Params.authors }}
     {{- $people := slice -}}

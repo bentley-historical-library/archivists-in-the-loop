@@ -9,10 +9,11 @@
   <div class="posts-list">
     {{ range .Pages.ByDate.Reverse }}
       <article class="post-card">
-        {{ with .Params.coverImage }}<img class="post-card__cover" src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}
+        {{ with .Params.coverImage }}{{ with resources.Get (path.Join "images" (path.Base .)) }}<img class="post-card__cover" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">{{ end }}{{ end }}
         <h2 class="post-card__title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
+        {{ with .Params.report_title }}<p class="post-card__subtitle">{{ . }}</p>{{ end }}
         {{ if not .Date.IsZero }}
           <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         {{ end }}

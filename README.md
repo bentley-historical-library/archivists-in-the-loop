@@ -42,6 +42,8 @@ archivists-in-the-loop/
 ├── content/                        Your pages and posts (Markdown files)
 │   └── reports/                    Reports section: _index.md plus one Markdown file per report
 ├── data/                           Files for data to power dynamic pages (JSON files)
+├── assets/                         Processed assets
+│   └── images/                     Report cover images (coverImage)
 ├── static/                         Static assets (images, favicon, etc.)
 │   └── documents/                  Report PDFs
 └── themes/umich-base-accessible/
@@ -221,6 +223,7 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | Field | Description |
 | --- | --- |
 | `title` | Report title |
+| `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading, in the Reports list, and used as the JSON-LD `headline` |
 | `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
 | `date` | Issue date |
 | `authors` | List of author names, one per line |
@@ -228,7 +231,7 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
 | `license` | License name, e.g. `CC BY 4.0` |
 | `reportPDF` | Path to the PDF, e.g. `/documents/my-report.pdf`; adds a download button |
-| `coverImage` | Optional cover graphic (jpg/png) in `static/images/`, e.g. `/images/my-report-cover.png`; shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
+| `coverImage` | Optional cover graphic (jpg/png). Give the filename only, e.g. `my-report-cover.png`; the file must be in `assets/images/` (not `static/images/`) or the build fails; shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
 | `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
 | `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |
 | `citation` | Suggested citation text |
@@ -237,7 +240,7 @@ Empty fields are simply not displayed.
 
 ### Structured metadata
 
-Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, description, date, authors, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name, headline from `report_title`, abstract from `description`, date, authors, publisher, DOI, license, PDF link). No extra work is needed when adding a report.
 
 ### Homepage button and callout
 

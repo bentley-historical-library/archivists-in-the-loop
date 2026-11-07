@@ -3,6 +3,7 @@ title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 description: '' # short summary; shown on the report page, the Reports list, and the home page callout
 date: '{{ .Date }}' # issue date
 draft: true
+report_title: '' # full formal title of the report (may differ from the short page title); shown under the page heading and used as the JSON-LD headline
 authors:
   - '' # one name per line
 publisher: 'University of Michigan'
