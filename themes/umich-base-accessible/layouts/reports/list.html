@@ -17,7 +17,7 @@
         {{ if not .Date.IsZero }}
           <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         {{ end }}
-        {{ with .Params.authors }}<p class="post-card__authors">{{ delimit (partial "report-author-names.html" .) ", " | safeHTML }}</p>{{ end }}
+        {{ with partial "report-author-names.html" .Params.authors }}<p class="post-card__authors">{{ delimit . ", " | safeHTML }}</p>{{ else }}{{ with partial "report-author-names.html" .Params.editors }}<p class="post-card__authors">{{ delimit . ", " | safeHTML }} ({{ if gt (len .) 1 }}eds.{{ else }}ed.{{ end }})</p>{{ end }}{{ end }}
         {{ with .Description }}<p class="post-card__summary">{{ . }}</p>{{ end }}
         <a href="{{ .RelPermalink }}" class="post-card__link">View report</a>
       </article>

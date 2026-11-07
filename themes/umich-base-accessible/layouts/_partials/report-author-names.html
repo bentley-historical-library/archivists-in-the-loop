@@ -1,16 +1,18 @@
-{{- /* Returns a slice of author names (as safe HTML) from a report's `authors` front matter.
-       Each author may be a map ({name, orcid}) or a plain string (legacy).
+{{- /* Returns a slice of names (as safe HTML) from a report's `authors` or `editors` front matter.
+       Each entry may be a map ({name, orcid}) or a plain string (legacy). Entries with no name are skipped.
        When an orcid is given (numbers only), the name links to the ORCID profile. */ -}}
 {{- $names := slice -}}
 {{- range . -}}
   {{- $name := "" -}}
   {{- $orcid := "" -}}
   {{- if reflect.IsMap . }}{{ $name = .name }}{{ $orcid = .orcid }}{{ else }}{{ $name = . }}{{ end -}}
-  {{- $html := $name | htmlEscape -}}
-  {{- with $orcid -}}
-    {{- $url := printf "https://orcid.org/%s" (strings.TrimPrefix "https://orcid.org/" .) -}}
-    {{- $html = printf `<a href="%s">%s</a>` $url $html -}}
+  {{- if $name -}}
+    {{- $html := $name | htmlEscape -}}
+    {{- with $orcid -}}
+      {{- $url := printf "https://orcid.org/%s" (strings.TrimPrefix "https://orcid.org/" .) -}}
+      {{- $html = printf `<a href="%s">%s</a>` $url $html -}}
+    {{- end -}}
+    {{- $names = $names | append ($html | safeHTML) -}}
   {{- end -}}
-  {{- $names = $names | append ($html | safeHTML) -}}
 {{- end -}}
 {{- return $names -}}

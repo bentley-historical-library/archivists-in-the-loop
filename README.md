@@ -53,7 +53,9 @@ archivists-in-the-loop/
         ├── _partials/          Reusable content components (see below)
         |   ├── head.html           <head> contents: fonts, stylesheet, meta tags
         |   ├── opengraph.html      Link-preview (Open Graph) meta tags
-        |   ├── report-author-names.html  Report authors as names, linked to ORCID when provided
+        |   ├── report-license.html  Converts a license like CC-BY-NC-SA-4.0 to display text and a Creative Commons URL
+        |   ├── report-author-names.html  Report authors/editors as names, linked to ORCID when provided
+        |   ├── report-people-jsonld.html  Report authors/editors as schema.org Person entries
         |   ├── header.html         Sticky site header with logo and navigation
         |   └── footer.html         Site footer with optional logo, menu, and text
         ├── _shortcodes/        Reusable content components
@@ -229,10 +231,11 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 | `report_title` | Full formal title of the report, if different from the short page `title`; shown under the page heading and under the title in the Reports list; used as the JSON-LD `headline`. Optional |
 | `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
 | `date` | Issue date |
-| `authors` | List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the URL is output as the author's `identifier` in the JSON-LD. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
+| `authors` | Optional (see `editors`). List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the URL is output as the author's `identifier` in the JSON-LD. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
+| `editors` | Optional. Same format as `authors` (`name` plus optional numbers-only `orcid`, linked the same way). Shown on the report page as "Editor(s)" after the authors, output as `editor` in the JSON-LD, and shown in the Reports list as "(eds.)" when a report has no authors. Use `authors`, `editors`, or both |
 | `publisher` | Publishing organization |
 | `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
-| `license` | License name, e.g. `CC BY 4.0` |
+| `license` | Creative Commons license written as `CC-<terms>-<version>` with hyphens and no spaces, e.g. `CC-BY-NC-SA-4.0` (also `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC-BY-ND-4.0`, `CC-BY-NC-ND-4.0`, and `CC0-1.0`). It is displayed as `CC BY NC SA 4.0`, linked to the matching creativecommons.org page (here `https://creativecommons.org/licenses/by-nc-sa/4.0/`, built automatically), and the URL is output as the JSON-LD `license`. Any other text is shown as-is, with no link |
 | `reportPDF` | Path to the PDF in `static/documents/`, written as `/documents/my-report.pdf`; adds a download button |
 | `coverImage` | Optional cover graphic (jpg/png). Give the **filename only**, e.g. `my-report-cover.png`, not a path; the file must be in `assets/images/` (not `static/images/`) or the build fails. Shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
 | `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
@@ -243,7 +246,7 @@ Empty fields are simply not displayed.
 
 ### Structured metadata
 
-Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `title`, headline from `report_title`, abstract from `description`, date, authors with ORCID identifiers, publisher, DOI, license, cover image, PDF link). No extra work is needed when adding a report.
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `title`, headline from `report_title`, abstract from `description`, date, authors and editors with ORCID identifiers, publisher, DOI, license (as the Creative Commons URL), cover image, PDF link). No extra work is needed when adding a report.
 
 ### Homepage button and callout
 
@@ -485,7 +488,7 @@ When working in this repository:
   front matter, and accessibility practices) rather than introducing new patterns.
 - Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
 - Git workflow: make changes on a new feature branch, never directly on `main` (pushes to `main` deploy the site). Commit step by step as work progresses, with a clear message for each logical change. Stage only the files you changed (check `git status` first) so the maintainer's unrelated or already-staged edits are not swept into your commits. Do not push or merge unless asked.
-- Report metadata (authors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
+- Report metadata (authors, editors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
 - Make only the edits requested. When asked to change tense or make another specific writing modification, do only that: do not rewrite, reword, fix, or change anything else unless specifically asked. If you notice other issues (typos, outdated statements), mention them rather than changing them.
 - CSS and layout alignment: when changing layout CSS, check that left edges still line up with the header's `.site-header__inner` pattern: no padding on the outer container, `max-width: var(--max-width-wide)` centered, then `padding-left: var(--site-padding)` inside. Default content width is `--max-width-default` (700px) and wide is `--max-width-wide` (1240px); `fullWidth: true` pages follow the same pattern so content aligns with the site name and nav at all viewport widths.
 - Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!

@@ -3,6 +3,8 @@
 {{- $doiURL := "" -}}
 {{- if $doi }}{{ $doiURL = printf "https://doi.org/%s" (strings.TrimPrefix "https://doi.org/" $doi) }}{{ end -}}
 {{- $pdf := .Params.reportPDF -}}
+{{- $license := "" -}}
+{{- with .Params.license }}{{ $license = partial "report-license.html" . }}{{ end -}}
 {{- $cover := "" -}}
 {{- with .Params.coverImage -}}
   {{- $cover = resources.Get (path.Join "images" (path.Base .)) -}}
@@ -14,7 +16,6 @@
 
   <header class="entry-header">
     <h1 class="entry-title">{{ .Title }}</h1>
-    {{ with .Params.report_title }}<p class="report-title">{{ . }}</p>{{ end }}
   </header>
 
   <div class="entry-content">
@@ -35,11 +36,13 @@
     {{ end }}
 
     <dl class="report-meta">
+      {{ with .Params.report_title }}<dt>Title</dt><dd class="report-title">{{ . }}</dd>{{ end }}
       {{ if not .Date.IsZero }}<dt>Issued</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
-      {{ with .Params.authors }}<dt>Author(s)</dt><dd>{{ delimit (partial "report-author-names.html" .) "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.authors }}<dt>Author(s)</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.editors }}<dt>Editor(s)</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with .Params.publisher }}<dt>Published by</dt><dd>{{ . }}</dd>{{ end }}
       {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
-      {{ with .Params.license }}<dt>License</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
     </dl>
     </div>
     </div>
@@ -57,23 +60,11 @@
   {{- with .Params.report_title }}{{ $ld = merge $ld (dict "headline" .) }}{{ end -}}
   {{- with .Description }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end -}}
   {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
-  {{- with .Params.authors }}
-    {{- $people := slice -}}
-    {{- range . }}
-      {{- $person := dict "@type" "Person" -}}
-      {{- if reflect.IsMap . -}}
-        {{- $person = merge $person (dict "name" .name) -}}
-        {{- with .orcid }}{{ $person = merge $person (dict "identifier" (printf "https://orcid.org/%s" (strings.TrimPrefix "https://orcid.org/" .))) }}{{ end -}}
-      {{- else -}}
-        {{- $person = merge $person (dict "name" .) -}}
-      {{- end -}}
-      {{- $people = $people | append $person -}}
-    {{- end -}}
-    {{- $ld = merge $ld (dict "author" $people) -}}
-  {{- end -}}
+  {{- with partial "report-people-jsonld.html" .Params.authors }}{{ $ld = merge $ld (dict "author" .) }}{{ end -}}
+  {{- with partial "report-people-jsonld.html" .Params.editors }}{{ $ld = merge $ld (dict "editor" .) }}{{ end -}}
   {{- with .Params.publisher }}{{ $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) }}{{ end -}}
   {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" . "sameAs" .) }}{{ end -}}
-  {{- with .Params.license }}{{ $ld = merge $ld (dict "license" .) }}{{ end -}}
+  {{- with $license }}{{ $ld = merge $ld (dict "license" (.url | default .label)) }}{{ end -}}
   {{- with $cover }}{{ $ld = merge $ld (dict "image" .Permalink) }}{{ end -}}
   {{- with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (strings.TrimPrefix "/" . | absURL) "encodingFormat" "application/pdf")) }}{{ end -}}
   <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>

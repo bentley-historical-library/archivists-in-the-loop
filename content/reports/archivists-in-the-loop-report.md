@@ -4,8 +4,8 @@ description: 'On June 4 and 5, 2026, a group of thirty practitioners, scholars a
 date: '2026-11-07'
 draft: true
 report_title: 'Archivists in the Loop: Archival Reference Practices and Artificial Intelligence'
-authors:
-  - name: 'Meghan Courtney' # one author per entry
+editors:
+  - name: 'Meghan Courtney' # one editor per entry
     orcid: '0009-0003-0398-4746' # optional. Numbers only, e.g. 0000-0002-1825-0097 (the URL is added automatically)
   - name: 'Jess Farrell'
     orcid: '0000-0001-9794-6908'
@@ -13,7 +13,7 @@ authors:
     orcid: '0000-0003-2617-0166'
 publisher: 'University of Michigan, Bentley Historical Library and School of Information'
 doi: '10.5281/zenodo.24017299'
-license: 'CC BY NC SA 4.0'
+license: 'CC-BY-NC-SA-4.0' # see archetype for format
 reportPDF: '' # e.g. /documents/my-report.pdf (file goes in static/documents/)
 pdfSize: '677.3 KB' # e.g. 2.4 MB
 citation: 'Courtney, M., Farrell, J., & Johnston, J. A., et. al. (2026). Archivists in the Loop: Archival Reference Practices and Artificial Intelligence. DOI: https://doi.org/10.5281/zenodo.24017299.' # suggested citation text
