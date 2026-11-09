@@ -1,0 +1,17 @@
+{{- /* Returns a slice of schema.org Organization dicts from a report's `publisher` front matter.
+       Each entry may be a map ({name, url, type}) or a plain string. Entries with no name are skipped.
+       A url becomes the organization's url. type is an optional schema.org Organization subtype
+       (e.g. Library, EducationalOrganization, CollegeOrUniversity); the default is Organization. */ -}}
+{{- $orgs := slice -}}
+{{- range . -}}
+  {{- $name := "" -}}
+  {{- $url := "" -}}
+  {{- $type := "Organization" -}}
+  {{- if reflect.IsMap . }}{{ $name = .name }}{{ $url = .url }}{{ $type = .type | default "Organization" }}{{ else }}{{ $name = . }}{{ end -}}
+  {{- if $name -}}
+    {{- $org := dict "@type" $type "name" $name -}}
+    {{- with $url }}{{ $org = merge $org (dict "url" .) }}{{ end -}}
+    {{- $orgs = $orgs | append $org -}}
+  {{- end -}}
+{{- end -}}
+{{- return $orgs -}}

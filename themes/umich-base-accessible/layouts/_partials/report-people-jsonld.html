@@ -1,0 +1,19 @@
+{{- /* Returns a slice of schema.org Person dicts from a report's `authors` or `editors` front matter.
+       Each entry may be a map ({name, orcid}) or a plain string. Entries with no name are skipped.
+       An orcid (numbers only) becomes a PropertyValue identifier (with its orcid.org URL) and a sameAs URL. */ -}}
+{{- $people := slice -}}
+{{- range . -}}
+  {{- $name := "" -}}
+  {{- $orcid := "" -}}
+  {{- if reflect.IsMap . }}{{ $name = .name }}{{ $orcid = .orcid }}{{ else }}{{ $name = . }}{{ end -}}
+  {{- if $name -}}
+    {{- $person := dict "@type" "Person" "name" $name -}}
+    {{- with $orcid -}}
+      {{- $id := strings.TrimPrefix "https://orcid.org/" . -}}
+      {{- $url := printf "https://orcid.org/%s" $id -}}
+      {{- $person = merge $person (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "ORCID" "value" $id "url" $url) "sameAs" $url) -}}
+    {{- end -}}
+    {{- $people = $people | append $person -}}
+  {{- end -}}
+{{- end -}}
+{{- return $people -}}

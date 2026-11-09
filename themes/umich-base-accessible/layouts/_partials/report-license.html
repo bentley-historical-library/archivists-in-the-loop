@@ -1,0 +1,13 @@
+{{- /* Parses a report `license` string such as "CC-BY-NC-SA-4.0" or "CC0-1.0".
+       Returns a dict: label (display text, e.g. "CC BY NC SA 4.0") and url
+       (the creativecommons.org license URL, or "" if the string is not a recognized CC license). */ -}}
+{{- $raw := replace (. | string | strings.TrimSpace) " " "-" -}}
+{{- $label := replace $raw "-" " " -}}
+{{- $url := "" -}}
+{{- with findRESubmatch `(?i)^CC-(BY(?:-NC)?(?:-SA|-ND)?)-(\d\.\d)$` $raw 1 -}}
+  {{- $m := index . 0 -}}
+  {{- $url = printf "https://creativecommons.org/licenses/%s/%s/" (lower (index $m 1)) (index $m 2) -}}
+{{- else with findRESubmatch `(?i)^CC0-(\d\.\d)$` $raw 1 -}}
+  {{- $url = printf "https://creativecommons.org/publicdomain/zero/%s/" (index (index . 0) 1) -}}
+{{- end -}}
+{{- return (dict "label" $label "url" $url) -}}

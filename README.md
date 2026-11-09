@@ -8,18 +8,9 @@ information about the event itself, its schedule, participants, and planning mat
 also being adapted to host the **project report** that documents the event and its outcomes.
 Similar follow-on initiatives may be created in future and posted to this same site.
 
-### Notes for Coding Assistants (How to Work in this Project)
-
-When working in this repository:
-
-- Treat existing event and planning content, dated from early in 2026 until June 2026, as a record of a completed event. Do not rewrite, remove, or change the tense of it unless asked.
-- Expect new content (report sections, follow-on project pages) to be added alongside the existing content; if new content suggests a need for a new page archetype or structure, this may be suggested, but for the most part maintain structure, navigation, and URLs so the site remains usable, flexible, and do not break existing links.
-- Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
-  front matter, and accessibility practices) rather than introducing new patterns.
-- Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
-- Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!
-
 ---
+
+## Theme
 
 This repo publishes a site powered by the Hugo static site framework. The theme, called **umich-base-accessible**,
 was styled with some inspiration from [digitalscholarship.umich.edu](https://digitalscholarship.umich.edu)
@@ -35,9 +26,10 @@ may require further attention in future.
 2. [Getting Started](#getting-started)
 3. [Configuration](#configuration)
 4. [Creating Content](#creating-content)
-5. [Shortcodes](#shortcodes)
-6. [Color Palette](#color-palette)
-7. [Homepage Image Carousel](#homepage-image-carousel)
+5. [Reports](#reports)
+6. [Shortcodes](#shortcodes)
+7. [Color Palette](#color-palette)
+8. [Homepage Image Carousel](#homepage-image-carousel)
 
 ---
 
@@ -46,19 +38,32 @@ may require further attention in future.
 ```text
 archivists-in-the-loop/
 ├── hugo.toml                       Site configuration (title, menu, params)
-├── archetypes/                     Theme templates for updates or other content types (Markdown files)
+├── archetypes/                     Templates for new content (updates.md, reports.md)
 ├── content/                        Your pages and posts (Markdown files)
+│   └── reports/                    Reports section: _index.md plus one Markdown file per report
 ├── data/                           Files for data to power dynamic pages (JSON files)
-├── static/                         Static assets (images, favicon, etc.)
+├── assets/                         Files Hugo processes via resources.Get
+│   └── images/                     Report cover images (coverImage field)
+├── static/                         Files copied as-is (images, favicon, etc.)
+│   └── documents/                  Report PDFs
 └── themes/umich-base-accessible/
     ├── theme.toml                  Theme metadata
     ├── assets/css/main.css         All styles; UM colors defined as CSS variables
     └── layouts/
         ├── _partials/          Reusable content components (see below)
         |   ├── head.html           <head> contents: fonts, stylesheet, meta tags
+        |   ├── opengraph.html      Link-preview (Open Graph) meta tags
+        |   ├── report-license.html  Converts a license like CC-BY-NC-SA-4.0 to display text and a Creative Commons URL
+        |   ├── report-author-names.html  Report authors/editors as names, linked to ORCID when provided
+        |   ├── report-people-jsonld.html  Report authors/editors as schema.org Person entries
+        |   ├── report-publisher-names.html  Report publishers as names, linked to their url when provided
+        |   ├── report-publishers-jsonld.html  Report publishers as schema.org Organization entries
         |   ├── header.html         Sticky site header with logo and navigation
         |   └── footer.html         Site footer with optional logo, menu, and text
         ├── _shortcodes/        Reusable content components
+        ├── reports/            Templates for the reports section
+        |   ├── list.html           Reports index (date, authors, summary)
+        |   └── single.html         Report page (metadata, PDF button, schema.org JSON-LD)
         ├── baseof.html         Base HTML wrapper (html, head, body)
         ├── home.html           Homepage template (optional hero + content)
         ├── single.html         Template for individual pages and posts
@@ -203,6 +208,55 @@ Or use the `figure` shortcode for a captioned image (see below). Avoid bare Mark
 
 ---
 
+## Reports
+
+Reports (white papers, project reports) live in `content/reports/`, listed at `/reports/` and linked from the main menu. The section is meant to hold the symposium report and any later reports from follow-on initiatives.
+
+### Add a new report
+
+1. Put the PDF in `static/documents/` (e.g. `static/documents/my-report.pdf`).
+2. If the report has a cover image, put it in **`assets/images/`** (e.g. `assets/images/my-report-cover.png`). It must be there, not in `static/images/`; the build fails if the file named in `coverImage` is not found in `assets/images/`.
+3. Create the page from the archetype:
+
+   ```bash
+   hugo new content/reports/my-report.md
+   ```
+
+4. Fill in the front matter (below) and optionally add a longer description, key findings, or acknowledgments in the page body.
+5. Set `draft: false` to publish. While `draft: true`, the report only appears with `hugo server -D`.
+
+### Report front matter fields
+
+| Field | Description |
+| --- | --- |
+| `title` | Short report title; used for the page heading, the Reports list, and the browser tab (and the JSON-LD `name` if there is no `report_fulltitle`) |
+| `report_fulltitle` | Optional full formal title, when `title` is a shorter page title. Shown as "Full title" in the report details and under the title in the Reports list; used as the JSON-LD `name` and `headline` (the short `title` becomes `alternateName`), and as the link-preview title |
+| `description` | Short summary; shown on the report page, the Reports list, link previews, and the homepage callout |
+| `date` | Issue date |
+| `authors` | Optional (see `editors`). List of authors, one entry per author, each with a `name` and an optional `orcid`:<br>`- name: 'Jane Doe'`<br>`  orcid: '0000-0002-1825-0097'`<br>Enter the ORCID iD as **numbers only** (with its hyphens); do not include `https://orcid.org/`. The URL is added automatically. When an `orcid` is given, the author's name links to their ORCID profile and the ORCID is output in the JSON-LD as the person's `identifier` (a `PropertyValue` with the URL) and `sameAs`. Leave `orcid` empty or omit it for no link. Plain-string entries (just a name) still work |
+| `editors` | Optional. Same format as `authors` (`name` plus optional numbers-only `orcid`, linked the same way). Shown on the report page as "Editor" or "Editors" (by count) after the authors, output as `editor` in the JSON-LD, and shown in the Reports list as "(eds.)" when a report has no authors. Use `authors`, `editors`, or both |
+| `publisher` | List of publishing organizations, one entry per publisher, each with a `name`, an optional `url`, and an optional `type`:<br>`- name: 'Bentley Historical Library, University of Michigan'`<br>`  url: 'https://bentley.umich.edu/'`<br>`  type: 'Library'`<br>`type` is a schema.org subtype of [`Organization`](https://schema.org/Organization) used as the JSON-LD `@type` (e.g. `Library`, `EducationalOrganization`, `CollegeOrUniversity`); it defaults to `Organization` and does not affect the page display. Use a separate entry for each distinct publisher rather than combining them in one string. Shown on the report page as "Publisher" or "Publishers" (by count), with the name linked when a `url` is given, and output as `publisher` in the JSON-LD (one entry per publisher, typed by `type` and including `url` when given). Plain-string entries (just a name) work too |
+| `doi` | DOI such as `10.xxxx/xxxxx` (the `https://doi.org/` prefix is added automatically) |
+| `license` | Creative Commons license written as `CC-<terms>-<version>` with hyphens and no spaces, e.g. `CC-BY-NC-SA-4.0` (also `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC-BY-ND-4.0`, `CC-BY-NC-ND-4.0`, and `CC0-1.0`). It is displayed as `CC BY NC SA 4.0`, linked to the matching creativecommons.org page (here `https://creativecommons.org/licenses/by-nc-sa/4.0/`, built automatically), and the URL is output as the JSON-LD `license`. Any other text is shown as-is, with no link |
+| `reportPDF` | PDF filename only, e.g. `my-report.pdf`, not a path; the file must be in `static/documents/`. Adds a download button, a JSON-LD PDF link, and the PDF link in the `report-callout` |
+| `coverImage` | Optional cover graphic (jpg/png). Give the **filename only**, e.g. `my-report-cover.png`, not a path; the file must be in `assets/images/` (not `static/images/`) or the build fails. Shown beside the summary, as a thumbnail in the Reports list, in the JSON-LD, and as the link-preview image |
+| `coverAlt` | Alt text for the cover; defaults to "Cover of <title>" |
+| `pdfSize` | File size shown on the download button, e.g. `2.4 MB` |
+| `citation` | Suggested citation text |
+
+Empty fields are simply not displayed.
+
+### Structured metadata
+
+Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `report_fulltitle` or `title`, headline from `report_fulltitle`, alternate name from `title`, abstract from `description`, date, authors and editors with ORCID identifiers, one typed `Organization` entry per publisher, DOI (as a `PropertyValue` identifier plus `sameAs`), license (as the Creative Commons URL), cover image, PDF link). No extra work is needed when adding a report.
+
+### Homepage button and callout
+
+- The homepage "Read the report" button is set in `hugo.toml` under `[params.hero.cta]`. Update its `url` when pointing to a different report.
+- The [`report-callout`](#report-callout) shortcode on `content/_index.md` pulls its summary from a report's `description`.
+
+---
+
 ## Shortcodes
 
 Shortcodes are reusable components you can drop into any Markdown page. Call them with `{{</* shortcode-name */>}}` syntax.
@@ -320,6 +374,27 @@ You can use full Markdown inside each column, including lists, links, and other 
 
 ---
 
+### `report-callout`
+
+A callout that pulls the title, summary (`description`), report page link, and PDF link from a report's front matter, so the text is maintained in one place. If no report is found (for example, it is still a draft), it shows a "coming soon" message.
+
+**Parameters:**
+
+| Parameter | Default | Options |
+| --- | --- | --- |
+| `path` | newest report | Content path of a report, e.g. `reports/my-report` |
+| `color` | `teal` | `maize`, `teal`, `blue`, `red` |
+
+**Usage:**
+
+```hugo
+{{</* report-callout */>}}
+
+{{</* report-callout path="reports/my-report" color="blue" */>}}
+```
+
+---
+
 ## Color Palette
 
 All UM brand colors are defined as CSS custom properties in `themes/umich-base-accessible/assets/css/main.css` and can be used in any custom CSS you add.
@@ -404,3 +479,19 @@ For example, to set the footer to Michigan Blue with Maize text:
 ```
 
 No other changes are needed — all header and footer styles reference these variables.
+
+### Notes for Coding Assistants (How to Work in this Project)
+
+When working in this repository:
+
+- Treat existing event and planning content, dated from early in 2026 until June 2026, as a record of a completed event. Do not rewrite, remove, or change the tense of it unless asked.
+- Expect new content (report sections, follow-on project pages) to be added alongside the existing content; if new content suggests a need for a new page archetype or structure, this may be suggested, but for the most part maintain structure, navigation, and URLs so the site remains usable, flexible, and do not break existing links.
+- Follow the conventions documented below (Hugo, the `umich-base-accessible` theme, shortcodes,
+  front matter, and accessibility practices) rather than introducing new patterns.
+- Do not invent factual details about the event, participants, or findings. Note the issue and ask the maintainers if information is missing.
+- Do not build the site (`hugo`) or temporarily edit content files to test changes. The maintainer runs `hugo server` and checks the display themselves. Make the requested edits and describe them; only build or test when explicitly asked.
+- Git workflow: make changes on a new feature branch, never directly on `main` (pushes to `main` deploy the site). Commit step by step as work progresses, with a clear message for each logical change. Stage only the files you changed (check `git status` first) so the maintainer's unrelated or already-staged edits are not swept into your commits. Do not push or merge unless asked.
+- Report metadata (authors, editors, issue date, DOI, license, publisher, summary, citation, PDF details) comes from the maintainers. Never invent or guess it. If it is unknown, leave a clearly marked `PLACEHOLDER` or empty field and prompt the maintainer for the information.
+- Make only the edits requested. When asked to change tense or make another specific writing modification, do only that: do not rewrite, reword, fix, or change anything else unless specifically asked. If you notice other issues (typos, outdated statements), mention them rather than changing them.
+- CSS and layout alignment: when changing layout CSS, check that left edges still line up with the header's `.site-header__inner` pattern: no padding on the outer container, `max-width: var(--max-width-wide)` centered, then `padding-left: var(--site-padding)` inside. Default content width is `--max-width-default` (700px) and wide is `--max-width-wide` (1240px); `fullWidth: true` pages follow the same pattern so content aligns with the site name and nav at all viewport widths.
+- Be succinct, don't waste the maintainer's time with reams of repetitive or vacuous text. Do not restate or summarize every change, only significant and notable ones, which may affect site behavior and change usage. Note where the maintainer should look to get details (in readme doc, new files, or elsewhere). Be concise!

@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{- $doi := .Params.doi -}}
+{{- $doiURL := "" -}}
+{{- if $doi }}{{ $doiURL = printf "https://doi.org/%s" (strings.TrimPrefix "https://doi.org/" $doi) }}{{ end -}}
+{{- /* reportPDF is a filename in static/documents/ */ -}}
+{{- $pdf := "" -}}
+{{- with .Params.reportPDF }}{{ $pdf = path.Join "documents" (path.Base .) }}{{ end -}}
+{{- /* reportDownloadURL (optional) overrides the local PDF button; reportDownloadLabel is the site name, e.g. Zenodo */ -}}
+{{- $extURL := .Params.reportDownloadURL | default "" -}}
+{{- $license := "" -}}
+{{- with .Params.license }}{{ $license = partial "report-license.html" . }}{{ end -}}
+{{- $cover := "" -}}
+{{- with .Params.coverImage -}}
+  {{- $cover = resources.Get (path.Join "images" (path.Base .)) -}}
+  {{- if not $cover -}}
+    {{- errorf "reports: coverImage %q not found. Put the file in assets/images/ and set coverImage to just the filename. (%s)" . $.Path -}}
+  {{- end -}}
+{{- end -}}
+<article id="post-{{ .File.UniqueID }}" class="entry report">
+
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="entry-content">
+    <div class="report-top">
+    {{/* coverImage is a filename in assets/images/ (a Hugo global resource), e.g. my-report-cover.png */}}
+    {{ with $cover }}
+    <img class="report-cover" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.coverAlt | default (printf "Cover of %s" $.Title) }}">
+    {{ end }}
+    <div class="report-top__text">
+    {{ with .Description }}<p class="report-summary">{{ . }}</p>{{ end }}
+    </div>
+    </div>
+
+    <div class="report-details">
+    {{ with $extURL }}
+    <p>
+      <a class="button button--primary" href="{{ . }}" rel="noopener">Download from {{ $.Params.reportDownloadLabel | default (urls.Parse .).Host }}</a>
+    </p>
+    {{ else }}
+    {{ with $pdf }}
+    <p>
+      <a class="button button--primary" href="{{ . | relURL }}" type="application/pdf" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
+    </p>
+    {{ end }}
+    {{ end }}
+
+    <h2 class="entry-metadata">Report Information</h2>
+
+    <dl class="report-meta">
+      {{ with .Params.report_fulltitle }}<dt>Full title</dt><dd class="report-fulltitle">{{ . }}</dd>{{ end }}
+      {{ if not .Date.IsZero }}<dt>Issued</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.authors }}<dt>{{ cond (gt (len .) 1) "Authors" "Author" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-author-names.html" .Params.editors }}<dt>{{ cond (gt (len .) 1) "Editors" "Editor" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with partial "report-publisher-names.html" .Params.publisher }}<dt>{{ cond (gt (len .) 1) "Publishers" "Publisher" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
+      {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ $doi }}</a></dd>{{ end }}
+      {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
+    </dl>
+    </div>
+
+    {{ .Content }}
+
+    {{ with .Params.citation }}
+    <h2>Suggested Citation</h2>
+    <p class="report-citation">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{/* schema.org Report as JSON-LD */}}
+  {{- $ld := dict "@context" "https://schema.org" "@type" "Report" "name" (.Params.report_fulltitle | default .Title) "url" .Permalink -}}
+  {{- with .Params.report_fulltitle }}{{ $ld = merge $ld (dict "headline" . "alternateName" $.Title) }}{{ end -}}
+  {{- with .Description }}{{ $ld = merge $ld (dict "abstract" .) }}{{ end -}}
+  {{- if not .Date.IsZero }}{{ $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
+  {{- with partial "report-people-jsonld.html" .Params.authors }}{{ $ld = merge $ld (dict "author" .) }}{{ end -}}
+  {{- with partial "report-people-jsonld.html" .Params.editors }}{{ $ld = merge $ld (dict "editor" .) }}{{ end -}}
+  {{- with partial "report-publishers-jsonld.html" .Params.publisher }}{{ $ld = merge $ld (dict "publisher" .) }}{{ end -}}
+  {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" (strings.TrimPrefix "https://doi.org/" $doi) "url" .) "sameAs" .) }}{{ end -}}
+  {{- with $license }}{{ $ld = merge $ld (dict "license" (.url | default .label)) }}{{ end -}}
+  {{- with $cover }}{{ $ld = merge $ld (dict "image" .Permalink) }}{{ end -}}
+  {{- if $extURL }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" $extURL "encodingFormat" "application/pdf")) }}
+  {{- else }}{{ with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (strings.TrimPrefix "/" . | absURL) "encodingFormat" "application/pdf")) }}{{ end }}{{ end -}}
+  <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
+
+</article>
+{{ end }}

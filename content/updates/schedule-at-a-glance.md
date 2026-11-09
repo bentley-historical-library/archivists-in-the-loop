@@ -6,10 +6,11 @@ layout: post
 author: # insert author name
 ---
 
+The symposium will take place over two days. For those traveling in from out of town, we recommend
+arriving on Wednesday night. The bulk of the activities will take place on June 4 and 5.<!--more-->
+
 ## High-Level Schedule
 
-The symposium will take place over two days. For those traveling in from out of town, we recommend
-arriving on Wednesday night. The bulk of the activities will take place on June 4 and 5.
 All symposium discussions and activites, apart form a dinner on Thursday, will
 take place at the Dow Event Space at the School of Information (see more details below).
 

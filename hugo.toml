@@ -25,7 +25,7 @@ uglyURLs = false
 relativeURLs = false
 
 [params]
-  description = "Archivists in the Loop: A symposium on archival reference services in the generative AI moment"
+  description = "Archivists in the Loop represents an ongoing project focused on researching archival reference services in the generative AI moment. The site originally shared information about the 2026 symposium, but now contains project reports and information on subsequent work."
 
   # Social site preview logo (place file in static/ and do not precede with a slash)
   ogImage = "images/basic-ai-symposium-graphic.png"
@@ -53,9 +53,9 @@ relativeURLs = false
     subheading = "A symposium on archival reference services in the generative AI moment"
     color      = "red"
     heroImage  = "images/basic-ai-symposium-graphic.png"
-  #   [params.hero.cta]
-  #     label = "Learn more"
-  #     url   = "/about/"
+    [params.hero.cta]
+      label = "Read the report"
+      url   = "reports/archivists-in-the-loop-report/"
 
   # Featured image carousel on the homepage.
   # Add one [[params.carousel.slides]] entry per image.
@@ -100,6 +100,10 @@ relativeURLs = false
     name       = "Schedule"
     url        = "/schedule/"
     weight     = 30
+  [[menu.main]]
+    name       = "Reports"
+    url        = "/reports/"
+    weight     = 35
   [[menu.main]]
     name       = "Updates"
     url        = "/updates/"
