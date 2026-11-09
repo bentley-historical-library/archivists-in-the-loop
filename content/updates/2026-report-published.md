@@ -1,5 +1,5 @@
 ---
-date: '2026-11-09T12:19:52-05:00'
+date: '2026-11-06T22:19:52-05:00'
 draft: false
 title: 'AiTL Report Published'
 layout: post
@@ -16,4 +16,4 @@ and shares the most notable outcomes from the report. The executive summary prov
 
 > On June 4 and 5, 2026, a group of thirty practitioners, scholars and technologists gathered in Ann Arbor, Michigan to discuss the implications of AI on archival reference work. The Archivists in the Loop symposium, sponsored by the Bentley Historical Library and the University of Michigan School of Information, convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering.
 
-[Click over to the report page to read more, or download the report from Zenodo](/reports/archivists-in-the-loop-report.md).
+[Click over to the report page to read more, or download the report from Zenodo](/reports/archivists-in-the-loop-report).
