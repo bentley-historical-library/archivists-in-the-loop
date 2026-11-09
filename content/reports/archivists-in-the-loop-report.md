@@ -22,6 +22,8 @@ doi: '10.5281/zenodo.24017299'
 license: 'CC-BY-NC-SA-4.0' # see archetype for format
 reportPDF: 'ArchivistsIntheLoopReport_V1.pdf' # filename only; file must be in static/documents/
 pdfSize: '677.3 KB' # e.g. 2.4 MB
+reportDownloadURL: 'https://doi.org/10.5281/zenodo.24017299' # optional. External download page (e.g. Zenodo); overrides the local PDF button
+reportDownloadLabel: 'Zenodo' # site name for the button, e.g. Zenodo ("Download from Zenodo")
 citation: 'Courtney, M., Farrell, J., & Johnston, J. A., et. al. (2026). Archivists in the Loop: Archival Reference Practices and Artificial Intelligence. DOI: https://doi.org/10.5281/zenodo.24017299.' # suggested citation text
 coverImage: 'archivists-in-the-loop-2026-report-cover.png' # filename only; file must be in assets/images/
 coverAlt: '' # alt text, defaults to Cover of title
