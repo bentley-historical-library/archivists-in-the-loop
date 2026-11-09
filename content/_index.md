@@ -22,10 +22,12 @@ learning more about the project! Please reach out to the
 organizers at [jajohnst@umich.edu](mailto:jajohnst@umich.edu) and [megcourt@umich.edu](mailto:megcourt@umich.edu).
 Read [more about our motivating questions on the "about" page]({{< relref "about" >}}).
 
-{{< section-heading level="2" color="maize" anchor="false" >}}Future work following the symposium{{< /section-heading >}}
+{{< section-heading level="2" color="maize" anchor="false" >}}Future Work{{< /section-heading >}}
 
-<!-- PLACEHOLDER: short intro on follow-on work (guide for reference archivists, analyses of generative AI and user access services, future research). -->
-Future work following the symposium will be described here.
+At the 2026 symposium, participants identified several specific areas for future work. The first of those was a required post-event outcome: producing [the 2026 report](/reports/archivists-in-the-loop-report). In addition, however, the cohort identified specific work areas that we can use to seek funding to continue developing resources and tools to help reference archivists navigate the changing nature of reference services and user behavior. We identified three cost tiers for this work:
 
-<!-- PLACEHOLDER: replace with links to follow-on outputs and activities 
-- [Link title (placeholder)](#) -->
+- [Low-Cost](/updates/2026-future-work/#low-cost-projects)
+- [Medium-Cost](/updates/2026-future-work/#medium-cost-project)
+- [High-Cost](/updates/2026-future-work/#high-cost-project)
+
+For more details, [see our full update on Future Work](/updates/2026-future-work/).
