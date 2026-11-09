@@ -46,7 +46,7 @@
       {{ with partial "report-author-names.html" .Params.authors }}<dt>{{ cond (gt (len .) 1) "Authors" "Author" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with partial "report-author-names.html" .Params.editors }}<dt>{{ cond (gt (len .) 1) "Editors" "Editor" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
       {{ with partial "report-publisher-names.html" .Params.publisher }}<dt>{{ cond (gt (len .) 1) "Publishers" "Publisher" }}</dt><dd>{{ delimit . "; " | safeHTML }}</dd>{{ end }}
-      {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ . }}</a></dd>{{ end }}
+      {{ with $doiURL }}<dt>DOI</dt><dd><a href="{{ . }}">{{ $doi }}</a></dd>{{ end }}
       {{ with $license }}<dt>License</dt><dd>{{ if .url }}<a href="{{ .url }}">{{ .label }}</a>{{ else }}{{ .label }}{{ end }}</dd>{{ end }}
     </dl>
     </div>
