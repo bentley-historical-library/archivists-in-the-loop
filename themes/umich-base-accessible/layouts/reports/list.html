@@ -17,7 +17,7 @@
           <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         {{ end }}
         {{ with .Description }}<p class="post-card__summary">{{ . }}</p>{{ end }}
-        <a href="{{ .RelPermalink }}" class="post-card__link">View report</a>
+        <a href="{{ .RelPermalink }}" class="post-card__link">View report page</a>
       </article>
     {{ else }}
       <p>No reports yet.</p>
