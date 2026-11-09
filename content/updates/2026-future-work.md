@@ -10,7 +10,7 @@ author: # insert author name
 This update accompanies our [2026 report](/reports/archivists-in-the-loop-report) and summarizes potential future work or next steps that were identified during the symposium.
 {{< /callout >}}
 
-Participants identified several specific areas for future work. After the Symposium ended, the group reconvened virtually to achieve their first major post-event goal, producing this report. The AitL cohort aims to seek funding to continue developing resources and tools to help reference archivists navigate the changing nature of reference services and user behavior. Thus, for each work area below, we have also identified a range of potential costs.
+Participants identified several specific areas for future work as outlined in this update.<!--more--> After the Symposium ended, the group reconvened virtually to achieve their first major post-event goal, producing [the 2026 report](/reports/archivists-in-the-loop-report). The AitL cohort aims to seek funding to continue developing resources and tools to help reference archivists navigate the changing nature of reference services and user behavior. Thus, for each work area below, we have also identified a range of potential costs.
 
 {{< section-heading level="2" color="maize" >}}
 Low-Cost Projects
@@ -40,7 +40,7 @@ Medium-Cost Project
 
 _In this category, we estimated project implementation would range from $10,000&ndash;$50,000._
 
-### Convening 
+### Convening
 
 Participants are eager to re-convene and continue the conversation in person. The AitL organizers are exploring the potential of a future Symposium or gathering.
 
