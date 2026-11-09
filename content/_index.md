@@ -22,7 +22,7 @@ learning more about the project! Please reach out to the
 organizers at [jajohnst@umich.edu](mailto:jajohnst@umich.edu) and [megcourt@umich.edu](mailto:megcourt@umich.edu).
 Read [more about our motivating questions on the "about" page]({{< relref "about" >}}).
 
-{{< section-heading level="2" color="maize" >}}Future work following the symposium{{< /section-heading >}}
+{{< section-heading level="2" color="maize" anchor="false" >}}Future work following the symposium{{< /section-heading >}}
 
 <!-- PLACEHOLDER: short intro on follow-on work (guide for reference archivists, analyses of generative AI and user access services, future research). -->
 Future work following the symposium will be described here.
