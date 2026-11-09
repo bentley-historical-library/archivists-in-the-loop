@@ -130,6 +130,22 @@ Uncomment and fill in the `[params.hero]` block in `hugo.toml`:
 
 ## Creating Content
 
+### Archetypes
+
+Archetypes are the front matter templates in `archetypes/` that `hugo new content/...` fills in. Hugo picks one by the section the new file is in:
+
+| Archetype | Used for | Command |
+| --- | --- | --- |
+| `reports.md` | Reports in `content/reports/` (full metadata fields; see [Creating Reports](#creating-reports)) | `hugo new content/reports/my-report.md` |
+| `updates.md` | Posts in `content/updates/` (date, title, `layout: post`, author) | `hugo new content/updates/my-update.md` |
+| *(none)* | Any other page or section; Hugo's built-in default (title, date, `draft: true`) is used | `hugo new content/about.md` |
+
+### Using archetypes
+
+1. Run `hugo new content/<section>/<file-name>.md`. The file name becomes the title (hyphens turn into spaces).
+2. Open the new file and fill in the front matter. The report archetype has comments explaining each field.
+3. Delete any optional fields you don't need, write the page body, and set `draft: false` to publish.
+
 ### Create a new page
 
 ```bash
@@ -151,7 +167,7 @@ Your page content goes here. Standard Markdown is supported.
 
 Set `draft: false` when the page is ready to publish. While developing, `hugo server -D` shows draft pages too.
 
-### Page front matter fields
+#### Page front matter fields
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -163,7 +179,7 @@ Set `draft: false` when the page is ready to publish. While developing, `hugo se
 | `fullWidth` | bool | `true` = content spans full viewport width (see below) |
 | `bodyClass` | string | Extra CSS class added to `<body>` for per-page styling |
 
-### Full-width pages
+#### Full-width pages
 
 By default, page content is constrained to a narrower, readable column (700px) that is aligned the left. Setting `fullWidth: true` removes that constraint so the content spans the full viewport width — useful for pages with wide tables, participant grids, or custom layouts.
 
@@ -206,9 +222,7 @@ Place the image in `static/images/` and reference it in Markdown:
 
 Or use the `figure` shortcode for a captioned image (see below). Avoid bare Markdown image syntax (`![alt](path)`) for images in `static/` — it does not apply `relURL` and will break on GitHub Pages.
 
----
-
-## Reports
+## Creating Reports
 
 Reports (white papers, project reports) live in `content/reports/`, listed at `/reports/` and linked from the main menu. The section is meant to hold the symposium report and any later reports from follow-on initiatives.
 
@@ -225,7 +239,7 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 4. Fill in the front matter (below) and optionally add a longer description, key findings, or acknowledgments in the page body.
 5. Set `draft: false` to publish. While `draft: true`, the report only appears with `hugo server -D`.
 
-### Report front matter fields
+#### Report front matter fields
 
 | Field | Description |
 | --- | --- |
@@ -246,11 +260,11 @@ Reports (white papers, project reports) live in `content/reports/`, listed at `/
 
 Empty fields are simply not displayed.
 
-### Structured metadata
+#### Descriptive metadata for reports (microdata)
 
 Each report page includes [schema.org `Report`](https://schema.org/Report) metadata as a JSON-LD block, generated from the front matter above (name from `report_fulltitle` or `title`, headline from `report_fulltitle`, alternate name from `title`, abstract from `description`, date, authors and editors with ORCID identifiers, one typed `Organization` entry per publisher, DOI (as a `PropertyValue` identifier plus `sameAs`), license (as the Creative Commons URL), cover image, PDF link). No extra work is needed when adding a report.
 
-### Homepage button and callout
+#### Homepage button and callout
 
 - The homepage "Read the report" button is set in `hugo.toml` under `[params.hero.cta]`. Update its `url` when pointing to a different report.
 - The [`report-callout`](#report-callout) shortcode on `content/_index.md` pulls its summary from a report's `description`.
@@ -260,8 +274,6 @@ Each report page includes [schema.org `Report`](https://schema.org/Report) metad
 ## Shortcodes
 
 Shortcodes are reusable components you can drop into any Markdown page. Call them with `{{</* shortcode-name */>}}` syntax.
-
----
 
 ### `section-heading`
 
@@ -281,8 +293,6 @@ A styled heading with a colored accent bar underneath. Use this to introduce maj
 
 {{</* section-heading level="3" color="teal" */>}}Our Partners{{</* /section-heading */>}}
 ```
-
----
 
 ### `callout`
 
@@ -307,8 +317,6 @@ Applications close on March 31.
 {{</* /callout */>}}
 ```
 
----
-
 ### `figure`
 
 A replacement for Hugo's built-in `figure` shortcode that correctly applies `relURL` to the image path. Use this whenever embedding images from `static/` in content pages — bare Markdown image syntax does not resolve subpaths correctly on GitHub Pages.
@@ -328,8 +336,6 @@ A replacement for Hugo's built-in `figure` shortcode that correctly applies `rel
 {{</* figure src="/images/workshop.jpg" alt="Participants at a digital scholarship workshop" caption="Spring 2023 workshop." */>}}
 ```
 
----
-
 ### `figure-block`
 
 An image with an optional caption. Prefer this over bare Markdown images when you need a caption or want consistent styling.
@@ -347,8 +353,6 @@ An image with an optional caption. Prefer this over bare Markdown images when yo
 ```hugo
 {{</* figure-block src="/images/workshop.jpg" alt="Participants at a digital scholarship workshop" caption="Spring 2023 workshop at the Shapiro Library." */>}}
 ```
-
----
 
 ### `flex-row`
 
@@ -371,8 +375,6 @@ Some text for the right side.
 ```
 
 You can use full Markdown inside each column, including lists, links, and other shortcodes.
-
----
 
 ### `report-callout`
 
