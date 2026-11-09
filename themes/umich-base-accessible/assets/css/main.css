@@ -764,7 +764,7 @@ tr:nth-child(even) td { background: var(--color-surface); }
   margin-left: 0.3em;
   font-size: 0.8em;
   text-decoration: none;
-  opacity: 0;
+  opacity: 0.6;
   transition: opacity 0.15s;
 }
 .shortcode-section-heading h2:hover .shortcode-section-heading__anchor,
@@ -772,9 +772,6 @@ tr:nth-child(even) td { background: var(--color-surface); }
 .shortcode-section-heading h4:hover .shortcode-section-heading__anchor,
 .shortcode-section-heading__anchor:focus {
   opacity: 1;
-}
-@media (hover: none) {
-  .shortcode-section-heading__anchor { opacity: 0.6; }
 }
 .shortcode-section-heading h2::after,
 .shortcode-section-heading h3::after {
