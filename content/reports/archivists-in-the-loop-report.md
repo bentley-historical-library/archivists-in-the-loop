@@ -1,6 +1,6 @@
 ---
 title: 'Archivists in the Loop Report'
-preview_description: 'The Archivists in the Loop symposium, sponsored by the Bentley Historical Library and the University of Michigan School of Information, convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering.'
+preview_description: 'Read the report from the Archivists in the Loop symposium, which convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering. The symposium was sponsored by the Bentley Historical Library and the University of Michigan School of Information.'
 description: 'On June 4 and 5, 2026, a group of thirty practitioners, scholars and technologists gathered in Ann Arbor, Michigan to discuss the implications of AI on archival reference work. The Archivists in the Loop symposium, sponsored by the Bentley Historical Library and the University of Michigan School of Information, convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering.'
 date: '2026-11-06'
 draft: false
