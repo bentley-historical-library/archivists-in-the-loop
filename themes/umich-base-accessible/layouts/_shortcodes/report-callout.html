@@ -15,9 +15,9 @@
     {{ with $page.Description }}<p>{{ . | markdownify }}</p>{{ end }}
     {{- /* As in reports/single.html, reportDownloadURL overrides a direct PDF link */ -}}
     {{ $extURL := $page.Params.reportDownloadURL | default "" }}
-    <p><a href="{{ $page.RelPermalink }}">Read about the report</a>
-      {{- if $extURL }} · <a href="{{ $extURL }}" rel="noopener">Download from {{ $page.Params.reportDownloadLabel | default (urls.Parse $extURL).Host }}</a>
-      {{- else }}{{ with $page.Params.reportPDF }} · <a href="{{ path.Join "documents" (path.Base .) | relURL }}" type="application/pdf" download>Download the PDF{{ with $page.Params.pdfSize }} ({{ . }}){{ end }}</a>{{ end }}{{ end -}}
+    <p><a href="{{ $page.RelPermalink }}">Read the report summary</a>
+      {{- if $extURL }} | <a href="{{ $extURL }}" rel="noopener">Download from {{ $page.Params.reportDownloadLabel | default (urls.Parse $extURL).Host }}</a>
+      {{- else }}{{ with $page.Params.reportPDF }} | <a href="{{ path.Join "documents" (path.Base .) | relURL }}" type="application/pdf" download>Download the PDF{{ with $page.Params.pdfSize }} ({{ . }}){{ end }}</a>{{ end }}{{ end -}}
     </p>
   {{ else }}
     <p class="shortcode-callout__title">Report</p>
