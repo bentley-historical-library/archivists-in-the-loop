@@ -5,6 +5,10 @@ draft: false
 fullWidth: true
 ---
 
+{{< callout color="red" title="Archived page" >}}
+_This page has been deprecated from the site's main menus. The page has information about the symposium that took place in June 2026 and remains here for reference only._
+{{< /callout >}}
+
 The agenda will be influenced heavily by participants' contributions and the themes that arise from participants' experiences and ideas. However, the organizers hope that conversations will emerge on:
 
 - The current state of archival reference
