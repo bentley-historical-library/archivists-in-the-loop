@@ -4,9 +4,14 @@
   Parameters:
     level  — heading level: 2 (default), 3, or 4
     color  — accent bar color: "maize" (default), "teal", "blue", "red"
+    id     — optional anchor id; defaults to one generated from the heading text
+    anchor — show a link icon next to the heading: true (default) or false
+             (the heading id is added either way)
 */}}
 {{ $level := .Get "level" | default "2" }}
 {{ $color := .Get "color" | default "maize" }}
+{{ $id := .Get "id" | default (.Inner | plainify | anchorize) }}
+{{ $anchor := true }}{{ with .Get "anchor" }}{{ $anchor = ne (lower (string .)) "false" }}{{ end }}
 <div class="shortcode-section-heading shortcode-section-heading--{{ $color }}">
-  <h{{ $level }}>{{ .Inner | markdownify }}</h{{ $level }}>
+  <h{{ $level }} id="{{ $id }}">{{ .Inner | markdownify }}{{ if and $anchor $id }} <a class="shortcode-section-heading__anchor" href="#{{ $id }}" aria-label="Link to this section: {{ .Inner | plainify }}"><span aria-hidden="true">#</span></a>{{ end }}</h{{ $level }}>
 </div>

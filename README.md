@@ -285,6 +285,8 @@ A styled heading with a colored accent bar underneath. Use this to introduce maj
 | --- | --- | --- |
 | `level` | `2` | `2`, `3`, `4` |
 | `color` | `maize` | `maize`, `teal`, `blue`, `red` |
+| `id` | generated from the heading text | Any anchor id, e.g. `low-cost`; set it to keep links stable if the heading is reworded |
+| `anchor` | `true` | `false` hides the `#` link icon (shown on hover/focus). The heading `id` is added either way |
 
 **Usage:**
 
