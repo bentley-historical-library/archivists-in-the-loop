@@ -5,6 +5,8 @@
 {{- /* reportPDF is a filename in static/documents/ */ -}}
 {{- $pdf := "" -}}
 {{- with .Params.reportPDF }}{{ $pdf = path.Join "documents" (path.Base .) }}{{ end -}}
+{{- /* reportDownloadURL (optional) overrides the local PDF button; reportDownloadLabel is the site name, e.g. Zenodo */ -}}
+{{- $extURL := .Params.reportDownloadURL | default "" -}}
 {{- $license := "" -}}
 {{- with .Params.license }}{{ $license = partial "report-license.html" . }}{{ end -}}
 {{- $cover := "" -}}
@@ -32,10 +34,16 @@
     </div>
 
     <div class="report-details">
+    {{ with $extURL }}
+    <p>
+      <a class="button button--primary" href="{{ . }}" rel="noopener">Download from {{ $.Params.reportDownloadLabel | default (urls.Parse .).Host }}</a>
+    </p>
+    {{ else }}
     {{ with $pdf }}
     <p>
       <a class="button button--primary" href="{{ . | relURL }}" type="application/pdf" download>Download the report (PDF{{ with $.Params.pdfSize }}, {{ . }}{{ end }})</a>
     </p>
+    {{ end }}
     {{ end }}
 
     <h2 class="entry-metadata">Report Information</h2>
@@ -70,7 +78,8 @@
   {{- with $doiURL }}{{ $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "DOI" "value" (strings.TrimPrefix "https://doi.org/" $doi) "url" .) "sameAs" .) }}{{ end -}}
   {{- with $license }}{{ $ld = merge $ld (dict "license" (.url | default .label)) }}{{ end -}}
   {{- with $cover }}{{ $ld = merge $ld (dict "image" .Permalink) }}{{ end -}}
-  {{- with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (strings.TrimPrefix "/" . | absURL) "encodingFormat" "application/pdf")) }}{{ end -}}
+  {{- if $extURL }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" $extURL "encodingFormat" "application/pdf")) }}
+  {{- else }}{{ with $pdf }}{{ $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" (strings.TrimPrefix "/" . | absURL) "encodingFormat" "application/pdf")) }}{{ end }}{{ end -}}
   <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
 
 </article>

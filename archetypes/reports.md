@@ -20,6 +20,8 @@ reportPDF: '' # filename only, e.g. my-report.pdf. The file MUST be in static/do
 coverImage: '' # optional cover graphic (jpg/png). Filename ONLY, e.g. my-report-cover.png. The file MUST be in assets/images/ (NOT static/images/); the build fails if it isn't found there.
 coverAlt: '' # alt text for the cover; defaults to "Cover of <title>"
 pdfSize: '' # e.g. 2.4 MB
+reportDownloadURL: '' # optional. External download page (e.g. Zenodo); overrides the local PDF button
+reportDownloadLabel: '' # site name for the button, e.g. Zenodo ("Download from Zenodo"); defaults to the URL's hostname
 citation: '' # suggested citation text
 ---
 
