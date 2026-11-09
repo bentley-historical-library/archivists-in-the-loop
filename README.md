@@ -1,14 +1,12 @@
-# Archivists in the Loop — Site Documentation
+# AiTL Site Information and Documentation
 
 ## The Project
 
-This repository is the website for **Archivists in the Loop**, an in-person symposium held in
+This repository is the website for **Archivists in the Loop** (aka AiTL), an in-person symposium held in
 June 2026, sponsored by the Bentley Historical Library and the University of Michigan School of Information. The site was originally built to support planning of that event, and it contains
 information about the event itself, its schedule, participants, and planning materials. It is now
 also being adapted to host the **project report** that documents the event and its outcomes.
 Similar follow-on initiatives may be created in future and posted to this same site.
-
----
 
 ## Theme
 
@@ -17,8 +15,6 @@ was styled with some inspiration from [digitalscholarship.umich.edu](https://dig
 and the U-M Library's publishing framework, using the University of Michigan's brand palette as base colors, Noto Sans and Rajdhani typography, and a responsive layout. Assistance with developing and adapting the theme, hugo templates,
 CSS, and documentation was provided by Claude Code. Underlying structures and accessibility features
 may require further attention in future.
-
----
 
 ## Table of Contents
 
@@ -71,8 +67,6 @@ archivists-in-the-loop/
         └── participants.html   Template for participant list page
 ```
 
----
-
 ## Getting Started
 
 To develop or run this site locally, it is recommended to install [Hugo](https://gohugo.io/), a static site generator framework.
@@ -83,8 +77,6 @@ See Hugo's [Quick Start guide](https://gohugo.io/getting-started/quick-start/).
 To run the site locally, download the GitHub repository, unzip, and then run the `hugo server` command.
 Open [http://localhost:1313](http://localhost:1313) in your browser.
 The site reloads automatically when you save any file. The `-D` flag includes draft pages.
-
----
 
 ## Configuration
 
@@ -125,8 +117,6 @@ Uncomment and fill in the `[params.hero]` block in `hugo.toml`:
     label = "Learn more"
     url   = "/about/"
 ```
-
----
 
 ## Creating Content
 
@@ -269,8 +259,6 @@ Each report page includes [schema.org `Report`](https://schema.org/Report) metad
 - The homepage "Read the report" button is set in `hugo.toml` under `[params.hero.cta]`. Update its `url` when pointing to a different report.
 - The [`report-callout`](#report-callout) shortcode on `content/_index.md` pulls its summary from a report's `description`.
 
----
-
 ## Shortcodes
 
 Shortcodes are reusable components you can drop into any Markdown page. Call them with `{{</* shortcode-name */>}}` syntax.
@@ -397,8 +385,6 @@ A callout that pulls the title, summary (`description`), report page link, and P
 {{</* report-callout path="reports/my-report" color="blue" */>}}
 ```
 
----
-
 ## Color Palette
 
 All UM brand colors are defined as CSS custom properties in `themes/umich-base-accessible/assets/css/main.css` and can be used in any custom CSS you add.
@@ -418,8 +404,6 @@ All UM brand colors are defined as CSS custom properties in `themes/umich-base-a
 | Puma Black | `--color-puma-black` | `#131516` |
 
 The shortcode `color` parameter values (`maize`, `teal`, `blue`, `red`) map to Maize, Taubman Teal, Michigan Blue, and Tappan Red respectively.
-
----
 
 ## Homepage Image Carousel
 
