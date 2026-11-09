@@ -27,7 +27,5 @@ Read [more about our motivating questions on the "about" page]({{< relref "about
 <!-- PLACEHOLDER: short intro on follow-on work (guide for reference archivists, analyses of generative AI and user access services, future research). -->
 Future work following the symposium will be described here.
 
-<!-- PLACEHOLDER: replace with links to follow-on outputs and activities -->
-- [Link title (placeholder)](#)
-- [Link title (placeholder)](#)
-- [Link title (placeholder)](#)
+<!-- PLACEHOLDER: replace with links to follow-on outputs and activities 
+- [Link title (placeholder)](#) -->
