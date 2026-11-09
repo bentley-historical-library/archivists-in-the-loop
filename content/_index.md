@@ -10,7 +10,7 @@ draft: false
 
 The **Archivists in the Loop** symposium focused on developing a practical understanding about the implications of generative AI and the work of archival reference services. The symposium convened in June 2026 for a two-day series of in-person workshops and group discussions on the topics of description, archival reference, access, and technology. The symposium was generously sponsored by the [Bentley Historical Library](https://bentley.umich.edu/) and the [University of Michigan School of Information](https://si.umich.edu/).
 
-{{< report-callout >}}
+{{< report-callout color="red" >}}
 
 {{< banner-heading level="3" color="maize" >}}
 A meeting of the minds to develop useful, actionable recommendations for how archivists can provide reference services alongside generative AI tools.
