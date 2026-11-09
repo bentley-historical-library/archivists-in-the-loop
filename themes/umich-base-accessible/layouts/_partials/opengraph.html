@@ -1,8 +1,12 @@
 {{- $title := cond .IsHome .Site.Title (printf "%s | %s" (.Params.report_fulltitle | default .Title) .Site.Title) -}}
+{{- with .Params.report_shortTitle }}{{ $title = . }}{{ end -}}
 {{- $desc  := cond (ne .Description "") .Description .Site.Params.description -}}
+{{- with .Params.preview_description }}{{ $desc = . }}{{ end -}}
 {{- $url   := .Permalink -}}
 {{- $img   := "" -}}
-{{- with .Params.image }}{{- $img = absURL . -}}{{- else with .Params.coverImage }}{{- with resources.Get (path.Join "images" (path.Base .)) }}{{- $img = .Permalink -}}{{- end -}}{{- else -}}
+{{- with .Params.socialImage }}
+  {{- with resources.Get (path.Join "images" (path.Base .)) }}{{- $img = .Permalink -}}{{- else }}{{- errorf "socialImage %q not found. Put the file in assets/images/ and set socialImage to just the filename. (%s)" . $.Path -}}{{- end -}}
+{{- else with .Params.image }}{{- $img = absURL . -}}{{- else with .Params.coverImage }}{{- with resources.Get (path.Join "images" (path.Base .)) }}{{- $img = .Permalink -}}{{- end -}}{{- else -}}
   {{- with .Site.Params.ogImage }}{{- $img = absURL . -}}{{- end -}}
 {{- end -}}
 

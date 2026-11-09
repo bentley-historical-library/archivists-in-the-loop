@@ -1,9 +1,11 @@
 ---
 title: 'Archivists in the Loop Report'
+preview_description: 'The Archivists in the Loop symposium, sponsored by the Bentley Historical Library and the University of Michigan School of Information, convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering.'
 description: 'On June 4 and 5, 2026, a group of thirty practitioners, scholars and technologists gathered in Ann Arbor, Michigan to discuss the implications of AI on archival reference work. The Archivists in the Loop symposium, sponsored by the Bentley Historical Library and the University of Michigan School of Information, convened a small and interactive group to discuss archival reference interactions, access systems, and how AI is changing user needs. This report summarizes the themes and recommendations of the gathering.'
 date: '2026-11-06'
 draft: false
 report_fulltitle: 'Archivists in the Loop: Archival Reference Practices and Artificial Intelligence'
+report_shortTitle: 'Archival Reference Practices and Artificial Intelligence'
 editors:
   - name: 'Meghan Courtney' # one editor per entry
     orcid: '0009-0003-0398-4746' # optional. Numbers only, e.g. 0000-0002-1825-0097 (the URL is added automatically)
@@ -26,5 +28,6 @@ reportDownloadURL: 'https://doi.org/10.5281/zenodo.24017299' # optional. Externa
 reportDownloadLabel: 'Zenodo' # site name for the button, e.g. Zenodo ("Download from Zenodo")
 citation: 'Courtney, M., Farrell, J., & Johnston, J. A., et. al. (2026). Archivists in the Loop: Archival Reference Practices and Artificial Intelligence. DOI: https://doi.org/10.5281/zenodo.24017299.' # suggested citation text
 coverImage: 'archivists-in-the-loop-2026-report-cover.png' # filename only; file must be in assets/images/
+socialImage: 'AitL_social_preview.png' # filename only; file must be in assets/images/. Used for og:image / twitter:image (falls back to coverImage)
 coverAlt: '' # alt text, defaults to Cover of title
 ---
